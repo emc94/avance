@@ -1,0 +1,898 @@
+@charset  "UTF-8";
+
+@font-face{
+    font-family:'dulcianConBI';
+    src:url("../../fonts/insigne - Dulcian Cond Bold Italic.otf"); 
+}
+@font-face{
+font-family:'dulcianExtB';
+src:url("../fonts/insigne - Dulcian Cond Bold.otf");
+}
+@font-face{
+font-family:'dulcianCondLightItalic';
+src:url("../fonts/insigne - Dulcian Cond Light Italic.otf");
+}
+@font-face{
+font-family:'dulcianExtBItalic';
+src:url("../fonts/insigne - Dulcian Ext Bold Italic.otf");
+}
+@font-face{
+font-family: 'dulcianRegular';
+src:url("../fonts/insigne - Dulcian Cond Regular.otf");
+}@font-face{
+font-family: 'CondDemiIt';
+src:url("../fonts/insigne - Dulcian Cond Demi Italic.otf");
+}@font-face{
+font-family: 'CondDemi';
+src:url("../fonts/insigne - Dulcian Cond Demi.otf");
+}@font-face{
+font-family: 'DJB';
+src:url("../fonts/DJB Chalk It Up.ttf");
+}
+@font-face{
+    font-family:"eraser";
+    src:url("../fonts/Eraser.ttf");
+}
+@font-face{
+    font-family:"eraserdust";
+    src:url("../fonts/erasdust.ttf");
+}
+@font-face{
+    font-family:"nexa";
+    src:url("../fonts/Nexa Light.otf");
+}
+@font-face{
+    font-family:'dulcianMediumItalic';
+    src:url("../fonts/insigne - Dulcian Cond Medium Italic.otf");
+
+}
+
+/***************************** GLOBAL ********************************************/
+
+a:focus, a:hover{text-decoration:none !important; color:white;}
+
+body{background-image: url("_img/background.png");
+background-repeat:repeat;
+min-width: 430px;
+}
+/****************************** MENU *********************************************/
+header{
+    width:100%;
+    min-width:400px;
+    height:100px; 
+    padding:10px 10px;
+    background-color: #0054ff; 
+    box-shadow: 0px 8px 20px 0px rgba(0,0,0,.3);
+    margin-bottom:20px;
+    /*overflow:hidden;*/
+}
+header .row{
+    display: flex;
+    align-items: center;
+}
+header input[type="submit"]{
+    background-image: url(_img/Btn_sair.png); 
+    padding: 0;border: 0 !important;width: 91px; height: 38px;
+    margin: 0;-webkit-mask-box-image: url(_img/Btn_sair.png);color:white;
+    background-color: transparent;
+}
+header a{margin: 0;padding: 0;}
+header a:hover{text-decoration: none;}
+header a img{width: 180px;}
+header nav.user_header ul {
+    width: 62%;
+    list-style: none;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+header nav.menu-navegacao{
+    display: flex;
+    width: 65%;
+}
+header nav.user_header ul li{
+        margin-right: 6%;
+}
+header nav.user_header ul li a{
+    font:19pt dulcianMediumItalic;
+    color:#ffffff;
+}
+header nav.user_header ul li a:hover{
+	color: #40b88a !important;
+    text-decoration: underline !important;
+}
+header nav.user_header ul.sub-menu{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: absolute;
+    z-index: 10;
+    margin: 0;
+    background: #0035a1;
+    width: inherit;
+    padding: 0;
+
+}
+header nav.user_header ul.sub-menu li{
+    margin-bottom: 5px;
+    background: rgba(149, 149, 149, 0.57);
+    width: 100%;
+    text-align: initial;
+    box-sizing: border-box;
+    padding-left: 5px;
+}
+header .menu-mobile{
+    display:none;
+    float: right;
+    width: 203px;
+    margin-right: -10px;
+    margin-top: -70px;
+}
+
+header .menu-mobile .actionMenu{
+    width: 150px;
+    height: 48px;
+    line-height: 48px;
+    margin-left: 20px;
+    padding: 0px 10px;
+    display: block;
+    cursor: pointer;
+    margin-bottom: 26px;
+}
+.actionMenu span{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    color: #fff;
+}
+.actionMenu img{
+    float: right;
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 50px;
+}
+.menu-items {
+    position: absolute;
+    width: 203px;
+    z-index: 12;
+    box-sizing: border-box;
+    display: none;
+    height: 104%;
+    margin-bottom: 0;
+}
+
+.menu-items ul{
+    list-style: none;
+    background: #ababab;
+    padding: 0;
+    box-shadow: -5px 4px 11px 0px rgba(20, 16, 14, 0.71);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 110%;
+    margin-bottom: 0;
+}
+.menu-items ul img{
+    margin-top: -11px;
+    margin-left: 72px;
+}
+.menu-items ul li{
+    border-bottom: 1px solid #efefee3d;
+    width: 100%;
+    padding: 5px 10px;
+}
+.menu-items ul li a{
+    display: flex;
+    font:17pt dulcian;
+    color:#ffffff;
+
+}
+.menu-items ul li:hover{
+    background-color: #0035a1;
+}
+
+.buttom-sair{display: flex;align-items: center;margin-left: 100px;}
+.logo_sige{float:left;min-width:274px;}
+.logo_sige a{
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-family: dulcianCondLightItalic;
+    font-size: 16px;
+
+}
+.rigth_bar_header{float:right;}
+.user_header{  
+    float: right !important;   
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: baseline;
+}
+.user_header h6{font:24px dulcianConBI;color:white;font-weight: 200; width: inherit;
+    display: inline;letter-spacing: 1px;}
+.user_header h6 span{font:23px dulcianRegular;color:white;font-style: italic;letter-spacing: 1.5px;}
+.user_header form{}
+.user_header input[type="submit"]{font:22px dulcianExtB;}
+/****************************** CONTEUDO ********************************************/
+.conteudo{}
+.banner{    
+    background-color: #0054ff;
+    padding-right: 0 !important;
+    margin: 0;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    height:215px;
+    overflow: hidden;
+}
+.banner h3{font:60px DJB;color:white;margin-top: 0;margin-bottom: -10px;text-align: center;}
+.banner h1{font: 75px eraser;color:white;text-align: center;margin-top: 0;}
+/*.row::before{content: initial !important;}*/
+/*.row::after{content: initial !important;}*/
+
+.banner .col-md-4{padding-right: 0 !important; padding-left: 0 !important;} 
+
+.banner-img{
+    padding-right: 0 !important; 
+    padding-left: 0 !important;    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+.banner-img figure{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.banner-img figcaption{    
+    font-family: dulcianExtBItalic;
+    color: white;
+    font-size: 2.4em;
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: absolute;
+    text-align: center;
+}
+.banner_img{margin:0; padding:0;}
+.interface{    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.interface nav{    
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+@media screen and (min-width: 650px){
+    .interface nav:nth-child(1){
+        align-items: flex-start;
+    }
+}
+.interface ul {    
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-left: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.interface ul li{
+    width: 243px;
+    height: 88px;
+    background-image: url(_img/bg_buttom.png);
+    padding: 0;
+    margin-bottom: 15px;
+    margin-right: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.interface ul li a{
+    text-align: center;
+    color: white;
+    width: 100%;
+    height: 100%;
+    margin-top: -10px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+.interface ul li a:hover{text-decoration:none;color:white !important;}
+.interface ul li a:active{text-decoration:none;color:white !important;}
+.interface ul li a h6{font:34px dulcianCondLightItalic;margin:0;padding: 0;}
+.interface ul li a h3{font:30px dulcianExtBItalic;margin:0;padding: 0;}
+.interface nav a img{ margin-right: 3px; margin-bottom: 15px;}
+
+.interface2{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+.interface2 nav a img{
+
+    margin-right: 3px;
+    margin-bottom: 15px;
+}
+.interface2 a:hover{text-decoration:none;color: white;}
+.interface2 a.btn_boletim {
+    font:17pt CondDemi;
+    line-height: 186%;
+    text-align: center;   
+    background-image: url(_img/btn_interface2h.png);
+    width: 175px;
+    height: 47px;
+    color: white;
+    float: left;
+    margin-left: 9px;
+    background-size: 175px 47px;
+    background-repeat: no-repeat;
+}
+.interface2 a.btn_boletim2 {
+    font:17pt CondDemi;
+    line-height: 186%;
+    text-align: center;     
+    background-image: url(_img/btn_interface2h.png);
+    width: 106px;
+    height: 47px;
+    color: white;
+    float: left;
+    margin-left: 9px;
+    background-size: 106px 47px;
+    background-repeat: no-repeat;
+}
+a.btn_boletim:hover{background-image: url(_img/btn_interface2.2.png);font-weight: bold; color: white !important;}
+a.btn_boletim2:hover{background-image: url(_img/btn_interface2.2.png);font-weight: bold; color: white !important;}
+
+.interface2 table{width: 100%;}
+.interface2 table, th, td {
+    border: 1px solid #dedada;
+    background-color: white;
+
+}
+.interface2  th, td{
+    padding: 5px 10px;
+    text-align: center;
+    color:rgba(0, 0, 0, 0.8);
+    font:12pt dulcianRegular;
+}
+.interface2  th{font-weight: bold;}
+.home{float: left;}
+.notas_faltas{background: #0054ff;clear:both;margin-bottom:15px;padding: 0!important;}
+.notas_faltas th, td{border: 1px solid #f1f1f1; padding: 10px !important;}
+.notas_faltas caption{background: #0035a1;color:white;font:16pt CondDemiIt;text-align: center;width: 100%;}
+td.disciplina{text-align: left;text-indent: 5px; }
+.print-btn{float:right; margin-right: 83px!important;}
+
+.nota{border: 1px solid #f1f1f1;}
+
+/****************************** CADASTRO DE NOTAS ***********************************/
+
+.cad_notas_faltas{clear:both;margin-bottom:15px;padding: 0!important;}
+.cad_notas_faltas table{margin:0 auto;}
+.cad_notas_faltas caption{background: #0035a1;color:white;font:16pt CondDemiIt;text-align: center;width: 100%;}
+.cad_notas_faltas th{text-align: center; padding-left:5px;padding-right: 5px;}
+td.disciplina{text-align: center;text-indent: 5px;padding-left:5px;padding-right: 5px; }
+.print-btn{float:right; margin-right: 83px!important;}
+textarea.textareaaluno{height: 35px !important;}
+
+/****************************** CADASTRO DE FALTAS ***********************************/
+#faltas_Turma table, td, th, tr{border:0;}
+#faltas_Turma caption{text-align: center; color:#2db56a; font-weight: bold;  font-size: 16px;}
+.trTitle{color: #2db56a !important; text-align: left !important;}
+#faltas_Turma th{text-align: center;font-size: 17px;color: #717070; padding: 0 7px; border: 0; border-bottom: 1px solid rgb(249, 239, 239);}
+#faltas_Turma th.thMedio{width:85px; color: #2db56a !important;}
+#faltas_Turma td{border-bottom:1px solid rgb(249, 239, 239);text-align: left;text-indent: 10px;font-size: 16px;color: #464646;padding: 6px 0;}
+#faltas_Turma td.tdCenter{text-align: center;}
+.temaAula{margin:0 auto; color:#717070; margin-top: 10px;}
+.temaAula .controls {text-align: center;}
+
+#frequencia_turma caption{text-align: center; color:#717070; font-weight: bold;  font-size: 16px;}
+.tdCenter{color: #717070;}
+th.thFre{text-align:center;color: #717070;  width: 110px;border-bottom:1px solid rgb(249, 239, 239);}
+th.thAluno{border-bottom:1px solid rgb(249, 239, 239);color: #717070;text-indent: 10px;}
+td.tdAluno{text-align: left;color: #717070;text-indent: 15px;}
+#frequencia_turma td{padding: 6px 0;border-bottom:1px solid rgb(249, 239, 239);}
+
+
+.tdCenter a{color: #717070;text-indent: 10px;}
+
+
+/****************************** QUADRO DE HORARIO DE AULA ********************************************/
+
+.quadroHorarioTurma{clear:both;margin-bottom:15px;padding: 0!important;}
+.quadroHorarioTurma table{margin:0 auto;}
+.quadroHorarioTurma caption{/**background: #0054ff;**/background: #ababab;color:white;font:16pt CondDemiIt;text-align: center;width: 100%;}
+.quadroHorarioTurma th{text-align: center; padding-left:10px;padding-right: 10px;}
+.quadroHorario {border:1px solid #f1f1f1;}
+.quadroHorario th {padding:10px;border:1px solid #f1f1f1;}
+.disciplina {border:1px solid #f1f1f1;}
+.disciplina td{
+    text-align: center;
+    text-indent: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid #f1f1f1;
+}
+.print-btn{float:right; margin-right: 83px!important;}
+textarea.textareaaluno{height: 35px !important;}
+td  span.glyphicon-trash{font-size:10pt !important;    margin-right: 5px;}
+.disciplina td a{color:rgba(255, 0, 0, 0.82) !important;}
+td span.glyphicon-education{font-size:11pt !important;    margin-right: 3px; color: #333;}
+td span.glyphicon-book{font-size: 9pt !important; margin-right: 3px; color: #8c9494;}
+/****************************** SIDEBAR ********************************************/
+
+.sidebar{width:125px;float:right;background-color:#ababab;padding:5px;margin-top: -20px;box-shadow:-1px 3px 11px rgba(20,16,14,.5)}
+.sidebar h6{font:15.56px dulcianRegular;color:white;text-align:center;}
+.sidebar article{width:110px;}
+.sidebar article figure{position:relative;height:150px;}
+.sidebar article img{position: absolute; margin: 0 auto; top: auto;  bottom: auto;   left: 0;  right: 0;}
+.sidebar article figcaption{position: absolute; margin: 0 auto; top: 97px; bottom: auto;  left: 0;  right: 0;}
+
+
+/****************************** SIDEBAR ********************************************/
+
+.sidebar{width:125px;float:right;background-color:#ababab;padding:5px;margin-top: -20px;box-shadow:-1px 3px 11px rgba(20,16,14,.5)}
+.sidebar h6{font:15.56px dulcianRegular;color:white;text-align:center;}
+.sidebar article{width:110px;}
+.sidebar article figure{position:relative;height:150px;}
+.sidebar article img{position: absolute; margin: 0 auto; top: auto;  bottom: auto;   left: 0;  right: 0;}
+.sidebar article figcaption{position: absolute; margin: 0 auto; top: 97px; bottom: auto;  left: 0;  right: 0;}
+
+/****************************** CONTEUDO ALUNO ********************************************/
+
+.banner-pages{
+    width: 100%;
+    height:126px;
+    padding-right:0 !important;
+    margin:0; 
+    margin-bottom: 15px;
+    overflow:hidden;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+.banner-pages figure{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.banner-pages figcaption{    
+    font-family: dulcianExtBItalic;
+    color: white;
+    font-size: 2.4em;
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+}
+.banner-pages-img{width:100%;margin:0; padding:0;}
+
+/**************************************** PAGES Formularios *******************************************/
+form.form_cad{
+    background: white;
+    border: 1px solid #ddd;
+    padding: 10px 20px;
+    box-shadow: 0px 0px 2px 1px #dedede;
+    color: #555 !important;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    min-width: 400px;
+    max-width: 1100px;
+    box-sizing: border-box;
+}
+form.esquerda{float:left;}
+form.direita{float: right;}
+.legenda .control-label{text-align:left;}
+form#form_cad legend{
+    background-color: transparent;border:0;  width: inherit;  padding: 0 10px;
+}
+fieldset.legenda{
+    margin-bottom: 15px !important;
+    border: 1px solid #e5e5e5;
+    padding: 0px  25px 10px 25px;
+    min-width: 360px;
+    box-sizing: border-box;
+    overflow-x:scroll; 
+}
+.legenda legend{width:inherit!important;padding:0 10px; border:0;}
+.campoErros{
+    display: none;
+    transition:all 5s;
+}
+.alert-danger>p{
+    font-family: monospace;
+    padding-left: 25px;
+    text-indent: 20px;
+
+}
+.erro-infor{
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #a94442;
+    font-size: 14px;
+    line-height: 1.42857143;
+    font-weight: normal;
+    display: block;
+}
+.erro-infor:hover{
+    cursor: pointer;
+}
+.sr-only{
+    position: initial !important;
+    font-weight: 700;
+    font-family: monospace;
+}
+.obrigatorio{color: #a94442;    margin-right: 5px;    font-size: 13pt;}
+
+.glyphicon-exclamation-sign{margin-bottom: 15px;    margin-left: 20px;}
+
+/************************* TRATAMENTO DE CAMPOS DE ENTRADA DE DADOS **************************************/
+.sublegend{
+    background-color: transparent;
+    margin-top: -10px !important;
+}
+.groupsmall{float:left; min-width: 259px;margin-left: 5px;}
+.input-group-addon label{display: initial; margin: 0;  font-weight: 700;}
+.pageinput{min-width:400px;}
+.controls{margin-right: 5px;}
+.input-group{margin-bottom: 5px;/**display: table-cell;*/}
+.dateinput{font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; color: #827f7f !important;}
+.inputwidth{max-width: 100%; min-width: 200px;}
+.selectwidth{/*max-width: 300px; min-width: 200px;*/font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; color: #827f7f !important;}
+ form.form_cad .input-group{margin-bottom:10px !important; /**min-width: 340px;**/}
+  p.checkinline{ float: right !important; margin-left: 6px !important;}
+.semmargin{margin-left: -16px !important;}
+
+
+/***************************************** MÓDULOS *********************************************/
+
+.modulos{padding: 20px 5px;}
+
+.modulos ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;/*center, space-around, flex-end*/
+    flex-direction: row;
+
+}
+.modulos li{
+    flex-basis: 290px;
+    height: 100px;
+    list-style: none;
+    min-width: 290px;
+    min-height: 100px;
+    margin-bottom: 10px;
+    /* margin-left: 10px; */
+    display: flex;
+    /* justify-content: flex-end; */
+    align-items: center;
+    padding: 10px;
+    flex-wrap: wrap;
+    word-wrap: break-word;
+    text-align: center;
+    background: url(_img/btn_modulos.png)no-repeat;
+    box-sizing: border-box;
+}
+
+.modulos li:hover{
+    background: url("_img/btn_modulosH.png")no-repeat;transition:background 0.5s ease-in;
+}
+.modulos ul li a{}
+.modulos ul li a:active{text-decoration:none;}
+.modulos ul li a:hover{text-decoration:none;}
+.modulos ul li a article{
+    display: flex;
+    margin-left: -1px;
+    margin-top: -6px;
+    align-items: center;
+}
+.modulos ul li a figure img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-left: 5px;
+}
+.modulos ul li a figure figcaption{display: none;}
+.modulos ul li a h6{
+    font-size: 18pt;
+    font-family: dulcianMediumItalic;
+    color: white;
+    width: 150px;
+    margin-left: 11px;
+    word-break: break-word;
+}
+.modulos ul li a:hover h6{
+    color:#fff !important;
+    transition:color 1.5s ease-in;
+    text-shadow: 0px 1px 3px #333;
+ }
+/****************************************  LISTAR  *******************************************/
+.listar{
+    background-color: white;
+    padding: 13px 10px 13px 10px;
+    border-bottom: 2px solid #eee;
+    /*box-shadow: 0px 0px 1px 1px rgba(80, 78, 78, 0.42);*/
+    box-sizing: border-box;
+        margin-bottom: 20px;
+        display: flex;
+/* adicionar aenas no mobile
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;*/
+}
+.listar article {
+    padding: 5px 5px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-basis: 80%;
+    margin-bottom: 30px;
+}
+.listar article.imagem-modulo{
+    align-self: stretch;
+    flex-direction: row;
+    flex-basis: 10%;
+    align-items: center;}
+.listar figure{margin-right: 15px;}      
+.listar img {
+    width:120px; height:120px;
+    box-sizing: border-box;
+    border-radius:50%;
+
+}   
+.listar figcaption{display: none;}
+.listar article div p{
+    margin:0;
+    color: #757573;
+    font-size: 17px;
+}
+.listar h4{
+    margin:0;
+    color: rgba(124, 122, 122, 0.92);
+    text-transform: capitalize;
+    font-size: 20px;
+    border-bottom: 3px solid rgba(126, 126, 126, 0.12);
+    padding: 5px;
+    font-weight: 600;
+    margin-bottom: 5px;
+
+}
+ h3.title{
+    margin:0;
+    margin-bottom: 15px;
+    color: #545454;
+    text-transform: capitalize;
+}
+.dados{
+    padding: 10px;
+    height: 95px;
+}
+div.nav_box{    position: absolute;
+    align-self: flex-end;}
+.listar div.nav_box nav{
+    margin-top:15px;
+}
+.listar div.nav_box nav ul{
+    list-style: none;
+    margin:0;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+}
+.listar div.nav_box nav ul li{
+    margin-right:20px;
+}
+.listar div.nav_box nav ul li a:focus, a:hover{
+    color: #e29756 !important;
+}
+
+nav.box-paginacao{
+    display: flex;
+    flex-wrap: nowrap;
+    min-width: 400px;
+    /*max-width: 90%;*/
+    justify-content: center;
+}
+nav.box-paginacao ul{
+    list-style: none;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    min-width: 200px;
+    max-width: 400px;
+}
+nav.box-paginacao ul li{
+    /*padding: 10px;*/
+    background-color: #e8e8e861;
+    border: .5px solid #f3f0f0;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-family: dulcian;
+    font-size: 10pt;
+    font-weight: bold;
+} 
+nav.box-paginacao ul li a{
+    color: #7d7979;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+nav.box-paginacao ul li a:focus, a:hover{
+    color:white !important;
+    transition: 1s ease-in;
+} 
+/***************************************** ERROS *********************************************/
+.error_center
+{margin: 0 auto; left: 0; right: 0;  top: auto; bottom: auto; 
+    position: absolute; width: 60%;margin-top: 0px;z-index: 10;
+}
+
+.buscar{
+    background-color: white;
+    padding: 5px 10px 13px 10px;
+    box-shadow: 0px 0px 1px 1px rgba(80, 78, 78, 0.42);
+    box-sizing: border-box;
+        margin-bottom: 20px;
+}
+.form-busca{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+.form-busca h3{
+    color:#797979 !important;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 30px;
+}
+.buscar .input-group{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+}
+.buscar input[type="search"]{
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px!important;
+}
+
+.buscar input[type="button"] {
+    background-image: url(_img/lupa.ico);
+    height: 50px;
+    background-size: 49px 45px;
+    background-repeat: no-repeat;
+    border: 0;
+    text-indent: 15px;
+    width: 15%;
+    background-color: transparent;
+    background-clip: padding-box;
+    font-size: 16pt;
+    color: #797979;
+    margin-left: 10px;
+    min-width: 150px;
+}
+
+.filtros-container{
+    border-left-color: #1b809e !important;
+    padding: 0px 20px 20px 20px;
+    margin: 20px 0;
+    border: 1px solid #eee;
+    border-left-width: 5px;
+    border-radius: 3px;
+    width: 100%;
+}
+.filtros-container h3{
+    margin-top: 10px;
+    font-size: 14pt;
+    color: #797979;
+}
+#resultado{
+    width: 100%;
+}
+#resultado .listar{
+    width: 100% !important;
+}
+
+#resultado h5{
+    color: #b1afaf;
+    font-weight: bold;
+    font-size: 10pt;
+    text-align: right;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #eee;
+
+}
+
+
+.box-upload{
+    border: 4px dashed #ddd;
+    display: flex;
+    flex-wrap: wrap;
+    width: 150px;
+    height: 150px;
+    justify-content: center;
+    font-size: 12pt;
+    color: #d0cdcd;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+.box-upload figcaption{
+    padding-top: 15px;
+}
+.box-upload img{
+    width: 60px;
+    height: 60px;
+}
+img.img-upload2{
+    width: 100% !important;
+    height: 100% !important;
+}
+figcaption.titulo2{
+   display: none !important; 
+}
+label.file{
+    border: 1px solid rgba(0,0,0,.15);
+    padding: 5px 10px 7px 0px;
+    border-radius: 1.2rem;
+    margin-top: 10px;
+    overflow: hidden;
+}
+input[type=file]{
+    display:none !important;
+}
+span.btn-file{
+    border: 1px solid #a1a1a14f;
+    background-image: linear-gradient(to bottom, #f6f6f6, #dddddd);
+       padding: 9px 5px 9px 5px;
+    border-radius: 10px 0px 0px 10px;
+        font-family: roboto;
+    font-size: 8pt;
+    color: #6a6d6d;
+}
+span.file-descricao{
+    font-size: 10pt;
+    color: #c1c0c0;
+    font-family: roboto;
+    font-weight: 100;
+}
+/*
+box-shadow: 0px 1px 1px 1px #7b7b7b;
+#eb6a00
+#777
+#337ab7
+font:Raleway,latoregular,sans-serif
+**/

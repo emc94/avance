@@ -1,0 +1,214 @@
+@charset "UTF-8";
+
+@font-face{
+	font-family:'dulcianconditalicbold';
+	src:url("../fonts/insigne - Dulcian Cond Bold Italic.otf");
+}
+@font-face{
+	font-family:'dulciancondbold';
+	src:url("../fonts/insigne - Dulcian Cond Bold.otf");
+}
+@font-face{
+	font-family:'dulciancondlight';
+	src:url("../fonts/insigne - Dulcian Cond Light Italic.otf");
+}
+@font-face{
+	font-family:'dulciancondregular';
+	src:url("../fonts/insigne - Dulcian Cond Regular.otf");
+}
+@font-face{
+    font-family:'dulcianExtB';
+    src:url("../fonts/insigne - Dulcian Cond Bold.otf");
+    }
+    @font-face{
+        font-family:'dulciancondbookitalic';
+        src:url("../fonts/insigne - Dulcian Cond Book Italic.otf");
+        }
+    
+
+body{
+    background: url(../img/login-bg.jpg) no-repeat center center fixed;
+    background-size: cover;
+
+}
+.container{
+    display:flex !important;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 6%;
+}
+
+.left{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    max-width: 400px;
+    margin-right: 20px;
+    /*margin-top: 16%;*/
+}
+.left article{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 400px;
+    background: white;
+    padding: 15px 24px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 6px 2px #6766669e;
+    justify-content: center;
+}
+.logos{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.logos img{
+    width: 175px;
+    height: 95%;
+
+}
+.separator{
+    background: #6d6d6d;
+    padding-right: 1px;
+    padding-left: 1px;
+    margin-left: 5px;
+    margin-right: 5px;
+    height: 87px;
+    margin-top: 5px;
+}
+.left h1{
+    font-family: 'dulciancondregular';
+    color: #0054ff;
+    font-size: 26px;
+    text-align: center;
+    margin: 29px 0;
+}
+.left h1 span{
+    font-family: 'dulcianconditalicbold';
+}
+label.login,.senha{
+    display: flex !important;
+    flex-wrap: nowrap;
+    background-color: #c1c1c1;
+    align-items: center;
+    padding-left: 1px;
+    border-radius: 5px;
+    margin-bottom: 19px;
+}
+figcaption{display:none!important;}
+
+form{
+    width: 80%;
+}
+
+.icon-login{
+    background: url(../img/login.png) no-repeat;
+    background-color: white;
+    width: 40px;
+    height: 32px;
+    background-size: 20px;
+    background-position: center;
+    border-radius: 5px 0px 0px 5px;
+    margin-right: 2px;
+}
+.icon-senha{
+    background:url(../img/senha.png) no-repeat;
+    background-color: white;
+    width: 40px;
+    height: 32px;
+    background-size: 20px;
+    background-position: center;
+    border-radius: 5px 0px 0px 5px;
+    margin-right: 2px;
+}
+label.login .form-control,label.senha .form-control{
+    background-color: #d1d1d1!important;
+    border: none !important;
+    font-family: 'dulciancondlight' !important;
+    font-style: italic;
+    font-size: 16px;
+}
+select.form-control{
+    font-family: 'dulciancondlight';
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: #efefef url(../img/seta.jpg) 95.5% 40% no-repeat;
+    background-size: 12px;
+    height: 29px;
+    line-height: .9;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+input[type="submit"]{
+    background: #0054ffe0;
+    border: 0;
+    padding: 10px;
+    width: 100%;
+    font-family: 'dulcianExtB';
+    color: white;
+    font-size: 16pt;
+    border-radius: 6px;
+    margin-top:10px;
+    transition: background .6s ease-in;
+}
+input[type="submit"]:hover{ 
+    background: #064cda;
+}
+input:-webkit-autofill{
+    font-family: 'dulciancondlight'!important;
+    color:red;
+}
+.form-control{
+    border:none!important;
+}
+#opcoes{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+}
+#opcoes label{
+    margin:0;    
+    display: flex;
+    align-items: center;
+}
+#opcoes input[type='checkbox']{
+    margin-right: 5px;
+    margin-top: 1px;
+}
+span.opcoes{
+    font: 11pt 'dulciancondlight';
+    color: #337ab7;
+}
+#opcoes a{
+    color: #337ab7;
+    font: 11pt 'dulciancondlight';
+    transition:color .6s ease-in;
+}
+#opcoes a:hover{text-decoration: none;font-weight: bold; transition:color .6s ease-in;}
+
+.right{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.right h1{
+    font-family: 'dulciancondbold';
+    color:#e14420;
+    font-size: 45px;
+    margin:0;
+}
+.right h3{
+    font-family: 'dulciancondlight';
+    color:#e14420;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+.right figure img{
+    max-width: 145px
+}

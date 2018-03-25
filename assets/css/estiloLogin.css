@@ -1,0 +1,187 @@
+﻿@charset "UTF-8";
+
+@font-face{
+	font-family:'dulcianconditalicbold';
+	src:url("../fonts/insigne - Dulcian Cond Bold Italic.otf");
+}
+@font-face{
+	font-family:'dulciancondbold';
+	src:url("../fonts/insigne - Dulcian Cond Bold.otf");
+}
+@font-face{
+	font-family:'dulciancondlight';
+	src:url("../fonts/insigne - Dulcian Cond Light Italic.otf");
+}
+@font-face{
+	font-family:'dulciancondregular';
+	src:url("../fonts/insigne - Dulcian Cond Regular.otf");
+}
+
+
+/**************************  FORMATAÇÃO GLOBAL ************************************************/
+
+
+body{
+	background-color:#f4f4f4;
+	background-image:url("../_img/background.png");    
+	background-repeat: repeat;
+}
+
+/**************************  HEADER ***********************************************************/
+
+header{width:1000px;height:40px;}
+
+
+/**************************  CONTEUDO *********************************************************/
+
+
+@media only screen and (max-width: 400px) {
+
+
+
+}
+
+.conteudo{
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.conteudo .row{
+	display: flex;
+    justify-content: center;
+}
+.container-fluid{
+	width:100%;
+	display: flex;  
+	flex-wrap: wrap;
+	flex-direction: row;
+	padding: 0;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    justify-content: center;
+}
+.container{/*min-width: 400px;*/display:flex;flex-direction: column;justify-content: center;margin:0 !important;padding: 0 !important;}
+h1.titulo{font:35pt dulciancondregular;
+	color:#23522a; text-align: center; font-weight: 600; font-style: italic;
+	word-break: break-word;
+}
+.artigo_esquerda{
+	position: absolute;
+    width: 401px;
+    margin-left: -41%;
+}
+.artigo_esquerda h1{font: 25pt dulciancondregular; color:#23522a;}
+.artigo_direita figure.icon_login{width: 389px; height: 175px;min-width: 389px; }
+.artigo_direita form{width: 333px;background-color:#23522a;top: auto; bottom: auto;  left: 0;right: 0;margin: 0 auto;}
+.artigo_direita form fieldset{padding: 20px 20px 5px 20px;}
+.artigo_direita form a{width: 138px;
+    color: white;
+    font: 12pt dulciancondlight;
+    }
+.limit_form{
+    width: 389px;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+}
+img.seta{margin-bottom:-2px;}
+.limit_form fieldset label{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+article.artigo_direita{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+div.erro{
+	color: #a94442;
+    background: #f2dede;
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: center;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    margin-bottom: 10px;
+    margin-top: -10px;
+}
+div.erro>p{
+	margin:0;
+}
+.artigo_direita form fieldset a:hover{text-decoration: none;}
+.artigo_direita form figure{}
+.artigo_direita form figure img{}
+.artigo_direita input{border: 0 !important;}
+.artigo_direita input[type="text"], input[type="password"]{
+	padding-right: 6px !important; 
+	width:250px;
+	height: 42px;
+	background-color:#d3dcd4;
+	font:13pt dulciancondlight;
+	color:#636363;
+	text-indent:10px;
+}
+.artigo_direita input[type="text"]:focus{}
+
+.artigo_direita input[type="submit"]{
+	width:250px;
+	height: 32px;
+	background-color:#96c11f;
+	font:16pt dulciancondregular; 
+	color:white;
+	left: 0;
+	right: 0;
+	top: auto;
+	bottom: auto;
+	margin: 0 auto;
+	display: table;
+	margin-top: 14px;
+}
+.artigo_direita input:-webkit-autofill{
+	font: 14pt arial !important;
+    color: #c9cbca !important;
+    font-weight: 100 !important;
+    -webkit-text-fill-color: #949595;
+}
+.img_icon_user{width: 169px; height: 161px;  border-radius: 100%; margin-bottom: 25px; top: auto; bottom: auto; left: 0; right: 0;    margin: 0 auto;  position: absolute;}
+label .user_icon{width: 42px; height: 42px; padding: 0;}
+label .cadeado_icon{width: 42px; height: 42px;padding: 0;}
+nav.lembrarme{font:12pt dulciancondlight; padding: 0px 5px;   width: 200px; color:white !important;  margin: 0 auto;}    
+nav.lembrarme ul{width: 190px;text-align: center;}
+nav.lembrarme ul li{list-style: none;margin-right:10px; padding:0 5px; }
+nav.lembrarme ul li a:hover{text-decoration: none;font-size: 13pt;}
+#lembrarme{ margin-right: 10px;   float: left;}
+/**************************  RODAPÉ *********************************************************/
+
+footer{
+	width:100%;
+	min-width: 419px;
+	background-image: url("../_img/logo_flor.png"); 
+	background-repeat: no-repeat;
+    background-origin: content-box;
+    background-position: 100%;
+    display: flex !important;
+    flex-wrap: wrap;
+    height: 189px;
+    align-items: flex-end;
+    margin: 0;
+    padding: 0;
+
+}
+footer img{margin-right: 130px;}
+
+.fundo_footer{
+    width: 100%;
+    height: 90px;
+    background: #23522a;
+    z-index: -1;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+}
