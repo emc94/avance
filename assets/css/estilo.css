@@ -2,7 +2,7 @@
 
 @font-face{
     font-family:'dulcianConBI';
-    src:url("../../fonts/insigne - Dulcian Cond Bold Italic.otf"); 
+    src:url("../fonts/insigne - Dulcian Cond Bold Italic.otf"); 
 }
 @font-face{
 font-family:'dulcianExtB';
@@ -54,6 +54,11 @@ a:focus, a:hover{text-decoration:none !important; color:white;}
 body{background-image: url("_img/background.png");
 background-repeat:repeat;
 min-width: 430px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+flex-wrap: nowrap;
 }
 /****************************** MENU *********************************************/
 header{
@@ -69,11 +74,14 @@ header{
 header .row{
     display: flex;
     align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+
 }
 header input[type="submit"]{
-    background-image: url(_img/Btn_sair.png); 
+    background-image: url(../img/Btn_sair.png); 
     padding: 0;border: 0 !important;width: 91px; height: 38px;
-    margin: 0;-webkit-mask-box-image: url(_img/Btn_sair.png);color:white;
+    margin: 0;-webkit-mask-box-image: url(../img/Btn_sair.png);color:white;
     background-color: transparent;
 }
 header a{margin: 0;padding: 0;}
@@ -193,7 +201,11 @@ header .menu-mobile .actionMenu{
     background-color: #0035a1;
 }
 
-.buttom-sair{display: flex;align-items: center;margin-left: 100px;}
+.buttom-sair
+{display: flex;
+    align-items: center;
+    width: fit-content;
+}
 .logo_sige{float:left;min-width:274px;}
 .logo_sige a{
     margin: 0;
@@ -219,7 +231,8 @@ header .menu-mobile .actionMenu{
 .user_header input[type="submit"]{font:22px dulcianExtB;}
 /****************************** CONTEUDO ********************************************/
 .conteudo{}
-.banner{    
+
+/*.banner{    
     background-color: #0054ff;
     padding-right: 0 !important;
     margin: 0;
@@ -230,7 +243,8 @@ header .menu-mobile .actionMenu{
     flex-direction: row;
     height:215px;
     overflow: hidden;
-}
+}*/
+
 .banner h3{font:60px DJB;color:white;margin-top: 0;margin-bottom: -10px;text-align: center;}
 .banner h1{font: 75px eraser;color:white;text-align: center;margin-top: 0;}
 /*.row::before{content: initial !important;}*/
@@ -245,12 +259,13 @@ header .menu-mobile .actionMenu{
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: center;
+    width: fit-content;
 }
 .banner-img figure{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+
 }
 .banner-img figcaption{    
     font-family: dulcianExtBItalic;
@@ -261,15 +276,22 @@ header .menu-mobile .actionMenu{
     flex-direction: row;
     flex-wrap: wrap;
     position: absolute;
-    text-align: center;
+    text-align: left;
+    margin-left: 45px;
 }
-.banner_img{margin:0; padding:0;}
+.banner_img{
+    margin:0; 
+    padding:0;    
+    width: 100%;
+    height: 100%;
+}
 .interface{    
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    margin-top: 30px;
 }
 .interface nav{    
     display: flex;
@@ -294,14 +316,15 @@ header .menu-mobile .actionMenu{
 }
 .interface ul li{
     width: 243px;
-    height: 88px;
-    background-image: url(_img/bg_buttom.png);
+    height: 95px;
+    background-image: url(../img/bg_buttom.png);
     padding: 0;
     margin-bottom: 15px;
     margin-right: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-size: cover;
 }
 .interface ul li a{
     text-align: center;
@@ -483,7 +506,7 @@ td span.glyphicon-book{font-size: 9pt !important; margin-right: 3px; color: #8c9
 .banner-pages figcaption{    
     font-family: dulcianExtBItalic;
     color: white;
-    font-size: 2.4em;
+    font-size: 2em;
     align-self: center;
     display: flex;
     flex-direction: row;

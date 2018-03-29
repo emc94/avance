@@ -1,7 +1,7 @@
 <?php $this->load->view("includes/banner");?>
 
 <div class="col-md-11 col-xs-12 interface">
-				<nav class="col-md-11 col-xs-12"><!--Painel de Funçoes-->
+				<nav class=""><!--Painel de Funçoes-->
 <!--FUNÇOES SECRETARIO-->
 			<?php
 				if($_SESSION['usuario_logado']['sigeUserNivel']=='s'){
@@ -171,7 +171,7 @@
 <!--Alunos-->
 			<?php
 				}else{
-						echo"Erro ao validar sua SESSÃO!";
+						redirect('login');
 				}
 			?>
 

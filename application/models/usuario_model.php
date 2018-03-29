@@ -19,17 +19,31 @@ class Usuario_model extends CI_Model{
             elseif($nivel == 'professor')://professor
                 $nivel = 'p';
             elseif($nivel == 'diretor')://diretor
-                 $nivel = 'd';
+                $nivel = 'd';
             endif;
 
             $this->db->where("nivel", $nivel);
             $usuario = $this->db->get("usuario")->row_array();
         endif;
-        $dados_sessao =array(
+        $tabela = NULL;
+        if($nivel == 's'): 
+            $tabela = 'secretario';
+        elseif($nivel == 'p') :
+            $tabela = 'professor';
+        elseif($nivel == 'd') :
+            $tabela = 'diretor';
+        endif;
+        $this->db->select('nome');
+        $this->db->distinct();
+        $this->db->where('idUsuario', $usuario['idUsuario']);
+        $query  =  $this->db->get($tabela)->row();
+
+         $dados_sessao =array(
             'sigeUserNivel' => $nivel,
             'login' => $login,
             'cookie' => $usuario['cookie'],
-            'codigo_user' => $usuario['codigo_user']
+            'codigo_user' => $usuario['codigo_user'],
+            'nome' => $query->nome
         );
         return $dados_sessao;
     }

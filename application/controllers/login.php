@@ -29,7 +29,7 @@ class Login extends CI_Controller {
 			$dados = array("mensagem" => "Logado com sucesso!");
 			$dados['titulo'] = 'SIGE | Home';
 			$dados['tela'] = 'home'; 
-			
+			$dados['nome'] = $usuario['nome'];
 			//var_dump($dados);
 
 			redirect("home", $dados);
@@ -39,6 +39,13 @@ class Login extends CI_Controller {
 			$this->load->view("login", $dados);
         }
 		
-    }
+	}
+	public function logout(){
+
+		$this->session->sess_destroy();
+		$this->session->sess_regenerate([$destroy = TRUE]);//destroi os dados da sessao anterior impedindo o retorno a pagina anterior
+		redirect('/');
+
+	}
 }
 
