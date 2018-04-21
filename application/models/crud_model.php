@@ -3,18 +3,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Crud_model extends CI_Model{
 
-    public function do_insert($dados=NULL){
+    public function do_insert($tabela="", $dados=NULL){
         if($dados!=NULL) :
-            $this->db->insert('teste',$dados);
+            $this->db->insert($tabela,$dados);
             $this->session->set_flashdata('cadastrook','cadastro efeituado com sucesso!');
-            redirect('crud/cadastrar');//url helper que redireciona
         endif;
     }
+
     public function do_update($dados=NULL,$condicao=NULL){
         if($dados!=NULL && $condicao!=NULL) :
             $this->db->update('teste',$dados,$condicao);
             $this->session->set_flashdata('edicaook','Cadastro efeituado com sucesso!');
-            redirect(current_url());//volta pra url anterior
+            //redirect(current_url());//volta pra url anterior
         endif;
     }
     public function get_all(){
@@ -35,7 +35,7 @@ class Crud_model extends CI_Model{
         if($condicao!=NULL):
             $this->db->delete('teste',$condicao);
             $this->session->set_flashdata('excluidook','Excluido com sucesso!');
-            redirect('crud/listar');//volta pra url anterior
+            //redirect('crud/listar');//volta pra url anterior
         endif;
     }
 }

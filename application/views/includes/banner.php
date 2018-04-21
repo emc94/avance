@@ -6,11 +6,11 @@
 			<figcaption>SEJA BEM-VINDO<br /> 
 			AO SEU PORTAL<br />
 			<?php
-				if($_SESSION['usuario_logado']['sigeUserNivel']=='d' OR $_SESSION['usuario_logado']['sigeUserNivel']=='s'){
+				if($_SESSION['logged']['sigeUserNivel']=='d' OR $_SESSION['logged']['sigeUserNivel']=='s'){
 					echo "DO GESTOR";
-				}elseif($_SESSION['usuario_logado']['sigeUserNivel']=='p'){
+				}elseif($_SESSION['logged']['sigeUserNivel']=='p'){
 					echo "DO PROFESSOR";
-				}elseif($_SESSION['usuario_logado']['sigeUserNivel']=='a'){
+				}elseif($_SESSION['logged']['sigeUserNivel']=='a'){
 					echo "DO ALUNO";
 				}
 			?> 

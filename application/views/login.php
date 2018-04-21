@@ -24,7 +24,7 @@
 </head>
 <body>
 	<div class="container-fluid">
-		
+
 		<div class="container">
 			<section class="left">
 				<article>
@@ -37,7 +37,17 @@
 					</figure>
 					<!--FORMULÁRIO DE LOGIN-->
 					<h1>Bem-vindo, <span>identifique-se!</span></h1>
-
+					<?php 
+						if(isset($_SESSION['error'])) : 
+							echo'
+							<div class="alert alert-danger col-md-10" role="alert">
+								<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+								<span class="sr-only">Error:</span>
+							 	'.$_SESSION['error'].'
+							</div>';
+							$this->session->sess_destroy();
+						endif; 
+					?>
 					<form class="horizontal-form" action="login/autenticar" method="post" accept-charset="utf-8">
 						<!--SELECT ACESSO-->						
 						<div class="form-group">

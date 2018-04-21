@@ -1,3 +1,8 @@
+<?php
+	if(!isset($_SESSION['logged'])):
+		redirect('/login');
+	endif;
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +22,7 @@
 			</nav>
 
 <?php
-	$nomeUser=explode(' ',$_SESSION['usuario_logado']['nome']);
+	$nomeUser=explode(' ',$_SESSION['logged']['nome']);
 ?>
 <!--
 			<ul>
@@ -40,7 +45,7 @@
 			<nav class="col-md-9 col-sm-4 col-xs-4 text-right user_header">
 				<ul>
 						<?php 
-							if($_SESSION['usuario_logado']['sigeUserNivel']=='a'){
+							if($_SESSION['logged']['sigeUserNivel']=='a'){
 						?>
 							<li>
 								<a href="<?= base_url('home');?>">Início</a>
@@ -56,7 +61,7 @@
 							</li>
 						
 						<?php
-							}elseif($_SESSION['usuario_logado']['sigeUserNivel']=='d'){
+							}elseif($_SESSION['logged']['sigeUserNivel']=='d'){
 								echo'
 							<li>
 								<a href="'.base_url("home").'">Início</a>
@@ -74,7 +79,7 @@
 								<a href="'.base_url("gerenciar/horarios").'">Horários</a>
 							</li>';
 
-							}elseif($_SESSION['usuario_logado']['sigeUserNivel']=='p'){
+							}elseif($_SESSION['logged']['sigeUserNivel']=='p'){
 								echo'
 							<li>
 								<a href="'.base_url("home").'">Início</a>
@@ -85,7 +90,7 @@
 							<li>
 								<a href="'.base_url("gerenciar/quadroHorario").'">Horário de Aula</a>
 							</li>';				
-							}elseif($_SESSION['usuario_logado']['sigeUserNivel']=='s'){
+							}elseif($_SESSION['logged']['sigeUserNivel']=='s'){
 							echo'
 							<li>
 								<a href="'.base_url("home").'">Início</a>
@@ -167,7 +172,7 @@
 				<ul>
 					<img src="<?= base_url('assets/img/background_triangulo.png');?>" alt="icon_background" />
 					<?php 
-							if($_SESSION['usuario_logado']['sigeUserNivel']=='a'){
+							if($_SESSION['logged']['sigeUserNivel']=='a'){
 						?>
 							<li>
 								<a href="<?= base_url('home');?>">Início</a>
@@ -183,7 +188,7 @@
 							</li>
 						
 						<?php
-							}elseif($_SESSION['usuario_logado']['sigeUserNivel']=='d'){
+							}elseif($_SESSION['logged']['sigeUserNivel']=='d'){
 								echo'
 							<li>
 								<a href="'.base_url("home").'">Início</a>
@@ -201,7 +206,7 @@
 								<a href="'.base_url("gerenciar/horarios").'">Horários</a>
 							</li>';
 
-							}elseif($_SESSION['usuario_logado']['sigeUserNivel']=='p'){
+							}elseif($_SESSION['logged']['sigeUserNivel']=='p'){
 								echo'
 							<li>
 								<a href="'.base_url("home").'">Início</a>
@@ -212,7 +217,7 @@
 							<li>
 								<a href="'.base_url("gerenciar/quadroHorario").'">Horário de Aula</a>
 							</li>';				
-							}elseif($_SESSION['usuario_logado']['sigeUserNivel']=='s'){
+							}elseif($_SESSION['logged']['sigeUserNivel']=='s'){
 							echo'
 							<li>
 								<a href="'.base_url("home").'">Início</a>
@@ -237,7 +242,9 @@
 				</ul>
 			</nav>
 		</div>
-
-
-
 		</header>
+    
+    <?php echo $contents; ?>
+
+</body>
+</html>

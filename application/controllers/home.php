@@ -20,9 +20,8 @@ class Home extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('includes/header');
-		$this->load->view('includes/sidebar');
-		$this->load->view('home');
+		$this->auth->CheckAuth($this->router->fetch_class(), $this->router->fetch_method());
+		$this->template->load('template','home');
 
 	}
 }

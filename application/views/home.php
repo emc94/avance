@@ -4,35 +4,35 @@
 				<nav class=""><!--Painel de Funçoes-->
 <!--FUNÇOES SECRETARIO-->
 			<?php
-				if($_SESSION['usuario_logado']['sigeUserNivel']=='s'){
+				if($_SESSION['logged']['sigeUserNivel']=='s'){
 			?>
 					<ul>
 						<li>
-							<a href="gerenciar/modulo/escolas">
+							<a href="<?= base_url('gerenciar/escolas');?>">
 							<h6>Gerenciar</h6>
 								<h3>Escolas</h3>	
 							</a>
 						</li>
 						<li>
-							<a href="index.php?page=gerenciar&modulo=diretores">
+							<a href="<?= base_url('gerenciar/diretores') ;?>">
 								<h6>Gerenciar</h6>
 								<h3>Diretores</h3>	
 							</a>
 						</li>								
 						<li>
-							<a href="index.php?page=gerenciar&modulo=professores">
+							<a href="<?= base_url('gerenciar/professores') ;?>">
 								<h6>Gerenciar</h6>	
 								<h3>Professores</h3>
 							</a>
 						</li>
 						<li>
-							<a href="index.php?page=gerenciar&modulo=alunos">
+							<a href="<?= base_url('gerenciar/alunos');?>">
 								<h6>Gerenciar</h6>	
 								<h3>Alunos</h3>	
 							</a>
 						</li>											
 						<li>
-							<a href="index.php?page=">
+							<a href="<?= base_url('gerenciar/avisos');?>">
 							<h6>Gerenciar</h6>
 								<h3>Avisos</h3>	
 							</a>
@@ -45,60 +45,60 @@
 
 			<?php
 
-				}elseif($_SESSION['usuario_logado']['sigeUserNivel']=='d'){
+				}elseif($_SESSION['logged']['sigeUserNivel']=='d'){
 			?>
 
 					<ul>
 						<li>
-							<a href="index.php?page=gerenciar&modulo=professores">
+							<a href="<?= base_url('gerenciar/professores') ;?>">
 							<h6>Gerenciar</h6>
 								<h3>Professores</h3>	
 							</a>
 						</li>							
 						<li>
-							<a href="index.php?page=gerenciar&modulo=turmas">
+							<a href="<?= base_url('gerenciar/turmas') ;?>">
 							<h6>Gerenciar</h6>	
 								<h3>Turmas</h3>
 							</a>
 						</li>
 						<li>
-							<a href="index.php?page=gerenciar&modulo=alunos">
+							<a href="<?= base_url('gerenciar/alunos') ;?>">
 								<h6>Gerenciar</h6>	
 								<h3>Alunos</h3>	
 							</a>
 						</li>					
 						<li>
-							<a href="index.php?page=gerenciar&modulo=horarios">
+							<a href="<?= base_url('gerenciar/horarios');?>">
 							<h6>Gerenciar</h6>
 								<h3>Horários</h3>	
 							</a>
 						</li>						
 						<li>
-							<a href="index.php?page=">
+							<a href="<?= base_url('gerenciar/avisos');?>">
 							<h6>Gerenciar</h6>
 								<h3>Avisos</h3>	
 							</a>
 						</li>						
 						<li>
-							<a href="index.php?page=">
+							<a href="<?= base_url('gerenciar/declaracao');?>">
 								<h3>Declaração</h3>	
 							</a>
 						</li>
 					</ul>
 <!--DIRETORES-->
 			<?php
-				}elseif($_SESSION['usuario_logado']['sigeUserNivel']=='p'){
+				}elseif($_SESSION['logged']['sigeUserNivel']=='p'){
 			?>
 <!--FUNÇOES PROFESSORES-->
 					<ul>
 						<li>
-							<a href="index.php?page=gerenciar&modulo=notasefaltas">
+							<a href="<?= base_url('gerenciar/notasefaltas');?>">
 							<h3>Cadastrar</h3>
 								<h6>Notas e Frequência</h6>	
 							</a>
 						</li>						
 						<li>
-							<a href="index.php?page=quadroHorario">
+							<a href="<?= base_url('quadroHorario');?>">
 							<h3>Horário</h3>
 								<h6>de aula</h6>	
 							</a>
@@ -118,18 +118,18 @@
 					</ul>
 <!--PROFESSORES-->
 			<?php
-				}elseif($_SESSION['usuario_logado']['sigeUserNivel']=='a'){
+				}elseif($_SESSION['logged']['sigeUserNivel']=='a'){
 			?>
 <!--FUNÇOES ALUNOS-->
 					<ul>
 						<li>
-							<a href="index.php?page=portalaluno">
+							<a href="<?= base_url('portalaluno');?>">
 							<h6>Consultar</h6>
 								<h3>Notas e Faltas</h3>	
 							</a>
 						</li>						
 						<li>
-							<a href="index.php?page=horarioAula">
+							<a href="<?= base_url('horarioAula');?>">
 							<h3>Horário</h3>
 								<h6>de aula</h6>	
 							</a>

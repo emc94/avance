@@ -97,4 +97,84 @@ class Crud extends CI_Controller{
     }
 
 
+    public function upload_temp(){//faz o upload para uma pasta temporaria
+       
+        $file    = basename($_FILES['userfile']['name']);  
+
+        $validacao = false;
+        $modulo = isset($_POST['modulo']) ? htmlspecialchars($_POST['modulo']) : null;
+        //$categoria = isset($_POST['categoria']) ? htmlspecialchars($_POST['categoria']) : null;
+        $subcategoria = isset($_POST['subcategoria']) ? htmlspecialchars($_POST['subcategoria']) : null;
+        $subcategoria2 = isset($_POST['subcategoria2']) ? htmlspecialchars($_POST['subcategoria2']) : null;
+
+        if($modulo != null AND $subcategoria != null)
+            $validacao = true;
+
+        if($validacao != false){
+            
+            $uploaddir = "uploads/temp/$modulo/$subcategoria/$subcategoria2/";
+
+            if(!file_exists($uploaddir))://verifica se o diretório existe, caso não ele o cria
+               mkdir("uploads/temp/$modulo/$subcategoria/$subcategoria2/",0777,true);
+            endif;
+
+            $uploadfile = $uploaddir . basename($_FILES['userfile']['name']);
+
+            $configuracao = array(
+                'upload_path'   => "./$uploaddir/",
+                'allowed_types' => 'jpg',
+                'file_name'     => $file,
+                'max_size'      => '4096000'
+            ); 
+
+            $this->load->library('upload');
+            $this->upload->initialize($configuracao);
+
+            if ($this->upload->do_upload('userfile')) :
+                echo base_url($uploadfile);
+                 else :
+                echo $this->upload->display_errors();
+             endif;
+         }
+    }
+
+    function confirm_upload(){
+
+        $validacao = false;
+        $modulo = isset($_POST['modulo']) ? htmlspecialchars($_POST['modulo']) : null;
+        $categoria = isset($_POST['categoria']) ? htmlspecialchars($_POST['categoria']) : null;
+        $subcategoria = isset($_POST['subcategoria']) ? htmlspecialchars($_POST['subcategoria']) : null;
+        $subcategoria2 = isset($_POST['subcategoria2']) ? htmlspecialchars($_POST['subcategoria2']) : null;
+
+        if($modulo != null AND $categoria != null AND $subcategoria != null)
+            $validacao = true;
+
+        if($validacao != false){
+            $url = base_url('assets/uploads');
+
+            $uploaddir = " $url/$modulo/$categoria/$subcategoria/$subcategoria2/";
+
+            if(!file_exists($uploaddir))//verifica se o diretório existe, caso não ele o cria
+            mkdir($uploaddir,0777, true);
+
+            $uploadfile = $uploaddir . basename($_FILES['userfile']['name']);
+
+            if($_FILES['userfile']['size'] <= 4096000 AND ($_FILES['userfile']['type'] == "image/png" OR $_FILES['userfile']['type'] == "image/jpeg")){
+             if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
+                return true;
+             } else {
+                echo "Possível ataque de upload de arquivo!\n";
+             }
+            }
+
+            //array_map('unlink', glob($url."/temp/*"));//remove o arquivo da pasta temp
+
+        }
+        else{
+            echo "Erro ao receber informações do upload";
+            var_dump($categoria);
+            return false;
+        }
+    }
+
 }

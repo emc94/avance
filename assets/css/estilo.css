@@ -17,6 +17,10 @@ font-family:'dulcianExtBItalic';
 src:url("../fonts/insigne - Dulcian Ext Bold Italic.otf");
 }
 @font-face{
+    font-family:'dulcianExtDemi';
+    src:url("../fonts/insigne - Dulcian Ext Book.otf");
+    }
+@font-face{
 font-family: 'dulcianRegular';
 src:url("../fonts/insigne - Dulcian Cond Regular.otf");
 }@font-face{
@@ -51,7 +55,7 @@ src:url("../fonts/DJB Chalk It Up.ttf");
 
 a:focus, a:hover{text-decoration:none !important; color:white;}
 
-body{background-image: url("_img/background.png");
+body{background-image: url("../img/background.png");
 background-repeat:repeat;
 min-width: 430px;
 display: flex;
@@ -224,13 +228,13 @@ header .menu-mobile .actionMenu{
     justify-content: flex-start;
     align-items: baseline;
 }
-.user_header h6{font:24px dulcianConBI;color:white;font-weight: 200; width: inherit;
+.user_header h6{font:24px dulcianConBI;color:white;font-weight: 200; /*width: inherit*/;
     display: inline;letter-spacing: 1px;}
 .user_header h6 span{font:23px dulcianRegular;color:white;font-style: italic;letter-spacing: 1.5px;}
-.user_header form{}
+/*.user_header form{}*/
 .user_header input[type="submit"]{font:22px dulcianExtB;}
 /****************************** CONTEUDO ********************************************/
-.conteudo{}
+/*.conteudo{}*/
 
 /*.banner{    
     background-color: #0054ff;
@@ -279,7 +283,7 @@ header .menu-mobile .actionMenu{
     text-align: left;
     margin-left: 45px;
 }
-.banner_img{
+.banner img{
     margin:0; 
     padding:0;    
     width: 100%;
@@ -361,7 +365,7 @@ header .menu-mobile .actionMenu{
     font:17pt CondDemi;
     line-height: 186%;
     text-align: center;   
-    background-image: url(_img/btn_interface2h.png);
+    background-image: url(../img/btn_interface2h.png);
     width: 175px;
     height: 47px;
     color: white;
@@ -374,7 +378,7 @@ header .menu-mobile .actionMenu{
     font:17pt CondDemi;
     line-height: 186%;
     text-align: center;     
-    background-image: url(_img/btn_interface2h.png);
+    background-image: url(../img/btn_interface2h.png);
     width: 106px;
     height: 47px;
     color: white;
@@ -383,8 +387,8 @@ header .menu-mobile .actionMenu{
     background-size: 106px 47px;
     background-repeat: no-repeat;
 }
-a.btn_boletim:hover{background-image: url(_img/btn_interface2.2.png);font-weight: bold; color: white !important;}
-a.btn_boletim2:hover{background-image: url(_img/btn_interface2.2.png);font-weight: bold; color: white !important;}
+a.btn_boletim:hover{background-image: url(../img/btn_interface2.2.png);font-weight: bold; color: white !important;}
+a.btn_boletim2:hover{background-image: url(../img/btn_interface2.2.png);font-weight: bold; color: white !important;}
 
 .interface2 table{width: 100%;}
 .interface2 table, th, td {
@@ -408,6 +412,22 @@ td.disciplina{text-align: left;text-indent: 5px; }
 
 .nota{border: 1px solid #f1f1f1;}
 
+
+/*******************************     ERROS     *************************/
+.error-404-div{    
+    margin-top: 40px;
+    font-family:'dulcianExtDemi';
+    color:#9b9898;
+    text-align: center;
+}
+.error-404-div h3{
+    font-family:'dulcianExtDemi';
+    text-align: left;
+}
+.error-404-div h1{    
+   font-size: 35px;
+    font-weight: 600;
+}
 /****************************** CADASTRO DE NOTAS ***********************************/
 
 .cad_notas_faltas{clear:both;margin-bottom:15px;padding: 0!important;}
@@ -520,20 +540,38 @@ td span.glyphicon-book{font-size: 9pt !important; margin-right: 3px; color: #8c9
 /**************************************** PAGES Formularios *******************************************/
 form.form_cad{
     background: white;
-    border: 1px solid #ddd;
+    /*border: 1px solid #ddd;*/
     padding: 10px 20px;
-    box-shadow: 0px 0px 2px 1px #dedede;
+    /*box-shadow: 0px 0px 2px 1px #dedede;*/
     color: #555 !important;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     min-width: 400px;
     max-width: 1100px;
     box-sizing: border-box;
 }
+form.form_cad h3{
+    font-size: 24px;
+    font-family: 'dulcianExtDemi';
+    color: #8e8d8d;
+}
+.b-right{
+    border-right: 1px solid #e5e5e5;
+}
+form.form_cad label{
+    margin: 10px 0;
+    font-family: 'dulcianExtDemi';
+    color: #8e8d8d;
+    font-size: 14pt;
+}
 form.esquerda{float:left;}
 form.direita{float: right;}
 .legenda .control-label{text-align:left;}
 form#form_cad legend{
-    background-color: transparent;border:0;  width: inherit;  padding: 0 10px;
+    background-color: transparent;
+    border:0;  
+    width: inherit;  
+    padding: 0 10px;
+    color: #8e8d8d;
 }
 fieldset.legenda{
     margin-bottom: 15px !important;
@@ -618,14 +656,14 @@ fieldset.legenda{
     flex-wrap: wrap;
     word-wrap: break-word;
     text-align: center;
-    background: url(_img/btn_modulos.png)no-repeat;
+    background: url('../img/btn_modulos.png')no-repeat;
     box-sizing: border-box;
 }
 
 .modulos li:hover{
-    background: url("_img/btn_modulosH.png")no-repeat;transition:background 0.5s ease-in;
+    background: url("../img/btn_modulosH.png")no-repeat;transition:background 0.5s ease-in;
 }
-.modulos ul li a{}
+/*.modulos ul li a{}*/
 .modulos ul li a:active{text-decoration:none;}
 .modulos ul li a:hover{text-decoration:none;}
 .modulos ul li a article{
@@ -639,6 +677,7 @@ fieldset.legenda{
     height: 70px;
     border-radius: 50%;
     margin-left: 5px;
+    display: flex;
 }
 .modulos ul li a figure figcaption{display: none;}
 .modulos ul li a h6{
@@ -814,7 +853,7 @@ nav.box-paginacao ul li a:focus, a:hover{
 }
 
 .buscar input[type="button"] {
-    background-image: url(_img/lupa.ico);
+    background-image: url(../img/lupa.ico);
     height: 50px;
     background-size: 49px 45px;
     background-repeat: no-repeat;
@@ -860,7 +899,6 @@ nav.box-paginacao ul li a:focus, a:hover{
 
 }
 
-
 .box-upload{
     border: 4px dashed #ddd;
     display: flex;
@@ -900,10 +938,10 @@ input[type=file]{
 span.btn-file{
     border: 1px solid #a1a1a14f;
     background-image: linear-gradient(to bottom, #f6f6f6, #dddddd);
-       padding: 9px 5px 9px 5px;
+    padding: 12px 5px 9px 5px;
     border-radius: 10px 0px 0px 10px;
-        font-family: roboto;
-    font-size: 8pt;
+    font-family: roboto;
+    font-size: 10pt;
     color: #6a6d6d;
 }
 span.file-descricao{
@@ -919,3 +957,23 @@ box-shadow: 0px 1px 1px 1px #7b7b7b;
 #337ab7
 font:Raleway,latoregular,sans-serif
 **/
+
+/**************** MEDIA ******************/
+
+@media all and (max-width:1000px){
+    .b-right{
+        border:none;
+    }
+}
+@media all and (max-width:500px){
+
+    span.file-descricao{
+        font-size: 8pt;
+    }
+    span.btn-file {
+       font-size: 8pt;
+    }
+    span.btn-file {
+        padding: 13px 5px 10px 5px;
+    }
+}
