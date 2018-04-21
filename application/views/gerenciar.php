@@ -18,9 +18,7 @@
                 <img src="../assets/img/icone.cadastrarProfessor.png" alt="">
                 <figcaption>Editar Lançar Notas Aluno</figcaption>
             </figure>
-
             <h6>Matricular Aluno</h6>
-
             </article>	
     	</a>
     </li>
@@ -31,9 +29,7 @@
                 <img src="../assets/img/icone.cadastrarProfessor.png" alt="">
                 <figcaption>Listar Aluno</figcaption>
             </figure>
-
             <h6>Listar Alunos</h6>
-
             </article>	
     	</a>
     </li>
@@ -44,9 +40,7 @@
                 <img src="../assets/img/buscar.png" alt="">
                 <figcaption>Buscar Aluno</figcaption>
             </figure>
-
             <h6>Buscar Aluno</h6>
-
             </article>	
     	</a>
     </li>
@@ -139,7 +133,7 @@
       if($_SESSION['logged']['sigeUserNivel'] == 's'){//VERIFICA SE O NIVEL E O DE GESTOR
     ?>
 	<li>
-        <a href="index.php?page=form_cad_professor">
+        <a href="<?= base_url('/cadastrar/professor');?>">
         <article>
         <figure>
             <img src="../assets/img/icone.cadastrarProfessor.png" alt="">

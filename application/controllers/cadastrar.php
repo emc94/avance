@@ -20,6 +20,30 @@ class Cadastrar extends CI_Controller{
         $this->template->load('template','cadastros/diretor');
     }
 
+    public function professor(){//formulario de cadastro professor
+        $this->template->load('template','cadastros/professor');
+    }
+
+    public function aluno(){//formulario de cadastro aluno
+        $this->template->load('template','cadastros/aluno');
+    }
+
+    public function turma(){//formulario de cadastro turma
+        $this->template->load('template','cadastros/turma');
+    }
+
+    public function horario(){//formulario de cadastro horario
+        $this->template->load('template','cadastros/horario');
+    }
+
+    public function nota(){//formulario de cadastro notas
+        $this->template->load('template','cadastros/nota');
+    }
+
+    public function falta(){//formulario de cadastro faltas
+        $this->template->load('template','cadastros/faltas');
+    }
+
     public function cadastrarEscola(){
 
         $e_nome = isset($_POST['e_nome']) ? htmlspecialchars($_POST['e_nome']) : null;
