@@ -5,6 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>SIGE - Sistema de Gestão Educacional</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="icon" href="<?php echo base_url();?>assets/img/favicon.ico" />
 	<link rel="stylesheet" href="<?= base_url("assets/css/login.css");?>">
 	<link href="<?= base_url("assets/css/bootstrap.min.css");?>" rel="stylesheet">
 
