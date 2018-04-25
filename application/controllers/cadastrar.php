@@ -46,6 +46,11 @@ class Cadastrar extends CI_Controller{
 
     public function cadastrarEscola(){
 
+        //Validação dos campos do formulário de cadastro da escola
+        $this->form_validation->set_rules('e_nome','Nome', 'trim|required|min_length[5]|max_length[200]');
+        $this->form_validation->set_rules('situacao','Situacao', 'required');
+        $this->form_validation->set_rules('anoletivo','Anoletivo', 'required');
+
         $e_nome = isset($_POST['e_nome']) ? htmlspecialchars($_POST['e_nome']) : null;
         $situacao = isset($_POST['situacao']) ? htmlspecialchars($_POST['situacao']) : null;
         $anoletivo = isset($_POST['anoletivo']) ? htmlspecialchars($_POST['anoletivo']) : null;
