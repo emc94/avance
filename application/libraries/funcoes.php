@@ -122,4 +122,59 @@ class Funcoes
      return  $dadosUser;
   }
 
+  function cadastrarEndereco(){
+   /******************************* DADOS DO ENDERECO ******************************************/
+   $zonaresidencia = isset($_POST['zonaresidencia']) ? htmlspecialchars($_POST['zonaresidencia']) : null;
+   $endereco = isset($_POST['endereco']) ? htmlspecialchars($_POST['endereco']) : null;
+   $numero = isset($_POST['numero']) ? htmlspecialchars($_POST['numero']) : null;
+   $complemento = isset($_POST['complemento']) ? htmlspecialchars($_POST['complemento']) : null;
+   $bairro = isset($_POST['bairro']) ? htmlspecialchars($_POST['bairro']) : null;
+   $uf = isset($_POST['uf_endereco']) ? htmlspecialchars($_POST['uf_endereco']) : null;
+   $cep = isset($_POST['cep']) ? htmlspecialchars($_POST['cep']) : null;
+     $cep=$this->CI->funcoes->removerMascaras($cep);
+   $municipio = isset($_POST['municipio']) ? htmlspecialchars($_POST['municipio']) : null;
+   /****************************************************************************************/
+    
+
+    $dadosEndereco = array(
+      'cep' => $cep, 
+      'endereco' => $endereco, 
+      'bairro' => $bairro, 
+      'numero' =>  $numero, 
+      'complemento' => $complemento, 
+      'zona_residencial' => $zonaresidencia, 
+      'cidade' => $municipio, 
+      'estado' => $uf
+  );
+
+  $this->CI->crud_model->do_insert('endereco',$dadosEndereco);
+  
+  return $this->CI->db->insert_id();//resgata o id do endereco cadastrado        
+
+  }
+
+  function cadastrarContato(){
+      
+    /*********************************** DADOS CONTATO *******************************************/
+    $telefoneresidencial = isset($_POST['fixo']) ? htmlspecialchars($_POST['fixo']) : null; 
+    $telefoneresidencial=$this->CI->funcoes->removerMascaras($telefoneresidencial);
+    $celular = isset($_POST['cell1']) ? htmlspecialchars($_POST['cell1']) : null;  
+    $celular=$this->CI->funcoes->removerMascaras($celular);
+    $celular2 = isset($_POST['cell2']) ? htmlspecialchars($_POST['cell2']) : null;  
+    $celular2=$this->CI->funcoes->removerMascaras($celular2);
+    $email = isset($_POST['email']) ? htmlspecialchars($_POST['email']) : null;
+
+    $dadosContato= array(
+      'email' => $email, 
+      'celular' => $celular, 
+      'celular_2' => $celular2, 
+      'telefone_residencial' => $telefoneresidencial
+  );
+
+  $this->CI->crud_model->do_insert('contato',$dadosContato);
+  return $this->CI->db->insert_id();
+
+  }
+
+
 }

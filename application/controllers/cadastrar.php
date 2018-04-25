@@ -9,7 +9,7 @@ class Cadastrar extends CI_Controller{
         $this->load->helper('form');
         $this->load->helper('array');
         $this->load->library('form_validation');
-        $this->load->library('funcoes');
+        $this->load->library('funcoes'); //biblioteca de funcoes personalizadas
         $this->load->model('crud_model');
     }
 
@@ -184,35 +184,16 @@ class Cadastrar extends CI_Controller{
             $condicao=array(
             'idEscola' => $escola['idEscola'],
             'cargo' => 'diretor',
+            'cargo' => 'professor',
             'status' => 'ativo'));
 
         if($funcionario==NULL){//se a escola nao tiver diretor
             $this->db->trans_begin();
-            $usuario = $this->funcoes->addUser('d', $cpf, $datanascimento);
-            
-            $dadosEndereco = array(
-                'cep' => $cep, 
-                'endereco' => $endereco, 
-                'bairro' => $bairro, 
-                'numero' =>  $numero, 
-                'complemento' => $complemento, 
-                'zona_residencial' => $zonaresidencia, 
-                'cidade' => $municipio, 
-                'estado' => $uf
-            );
-
-            $dadosContato= array(
-                'email' => $email, 
-                'celular' => $celular, 
-                'celular_2' => $celular2, 
-                'telefone_residencial' => $telefoneresidencial
-            );
-
-            $this->crud_model->do_insert('endereco',$dadosEndereco);
-                $idEndereco = $this->db->insert_id();//resgata o id do endereco cadastrado        
-            
-            $this->crud_model->do_insert('contato',$dadosContato);
-                $codigoContato = $this->db->insert_id();
+                //cadastra o usuario
+                $usuario = $this->funcoes->addUser('d', $cpf, $datanascimento);
+                 
+                $idEndereco = $this->funcoes->cadastrarEndereco();//resgata o id do endereco cadastrado        
+                $codigoContato = $this->funcoes->cadastrarContato();
 
                 $dadosDiretor = array(
                     'idUsuario' => $usuario['idUsuario'],
@@ -232,7 +213,21 @@ class Cadastrar extends CI_Controller{
                     'outros_cursos' =>$outros_cursos,
                     'thumb' => basename($_FILES['userfile']['name']) 
                 );
-                
+
+                //cadastra o diretor
+                $this->crud_model->do_insert('diretor', $dadosDiretor);
+
+                $dadosFuncionario=array(
+                    'idFuncionario'=>$this->db->insert_id(),
+                    'idEscola' => $escola['idEscola'],
+                    'cpf' => $cpf,
+                    'cargo' => 'diretor',
+                    'status' => 'ativo'
+                );
+
+                //cadastra o funcionario
+                $this->crud_model->do_insert('funcionarios', $dadosFuncionario);
+
             if ($this->db->trans_status() === FALSE OR $this->funcoes->move_upload($usuario['codigo_user']) == FALSE)
             {
                  $this->db->trans_rollback();
@@ -251,10 +246,93 @@ class Cadastrar extends CI_Controller{
 
     public function cadastrarProfessor(){
         $validacao = false;
+        /************* DADOS PESSOAIS****************/
+        $escola = isset($_POST['escola']) ? htmlspecialchars($_POST['escola']) : null;
+        $nome = isset($_POST['nome']) ? htmlspecialchars($_POST['nome']) : null;
+        $cpf = isset($_POST['cpf']) ? htmlspecialchars($_POST['cpf']) : null;
+            $cpf=$this->funcoes->removerMascaras($cpf);
+        $datanascimento = isset($_POST['datanascimento']) ? htmlspecialchars($_POST['datanascimento']) : null;
+        $sexo = isset($_POST['sexo']) ? htmlspecialchars($_POST['sexo']) : null;
+        $cor = isset($_POST['cor']) ? htmlspecialchars($_POST['cor']) : null;
+        /*************SITUACAO CONTRATUAL ****************/
+        $funcao = isset($_POST['funcao']) ? htmlspecialchars($_POST['funcao']) : null;
+        $situacaocontrato = isset($_POST['situacaocontrato']) ? htmlspecialchars($_POST['situacaocontrato']) : null;
+        $disciplina = isset($_POST['disciplinas']) ? $_POST['disciplinas'] : null;
+        /********** FORMACAO ACADEMICA *******************/
+        $cursosuperior = isset($_POST['cursosuperior']) ? htmlspecialchars($_POST['cursosuperior']) : null;
+        $areadocurso = isset($_POST['areadocurso']) ? htmlspecialchars($_POST['areadocurso']) : null;
+        $formacaopedagogica = isset($_POST['formacaopedagogica']) ? htmlspecialchars($_POST['formacaopedagogica']) : null;
+        $posgraduacao = isset($_POST['posgraduacao']) ? htmlspecialchars($_POST['posgraduacao']) : null;
+        $tipopos = isset($_POST['tipopos']) ? htmlspecialchars($_POST['tipopos']) : null;
+        $outroscursos = isset($_POST['outroscursos']) ? htmlspecialchars($_POST['outroscursos']) : null;
 
+        //Consultar se a escola já possui um diretor
+        $escola = $this->funcoes->buscarDados('escola', 'idEscola', array('codigoEscola' => $escola));
 
+        //valida se o professor já e funcionario
+        $professor =$this->funcoes->buscarDados('funcionarios', 'idFuncionario', 
+            $condicao=array('cpf' => $cpf));
 
-    }
+        $disciplinas="";
+        foreach($disciplina as $value){
+            $disciplinas = $value.$disciplinas;
+        }
+
+        if($professor == NULL){//se o professor nao estiver cadastrado
+            $this->db->trans_begin();
+            $usuario = $this->funcoes->addUser('p', $cpf, $datanascimento);
+            
+            $idEndereco = $this->funcoes->cadastrarEndereco();
+            $codigoContato = $this->funcoes->cadastrarContato();
+
+            $dadosProfessor = array(
+                'idUsuario' => $usuario['idUsuario'],
+                'idEndereco' => $idEndereco,
+                'codigoContato' => $codigoContato,
+                'nome' => $nome,
+                'cpf' => $cpf,
+                'datanascimento' => $datanascimento,
+                'sexo' => $sexo,
+                'cor' => $cor,
+                'situacaocontrato' => $situacaocontrato,
+                'disciplinas' => $disciplinas,
+                'cursosuperior' => $cursosuperior,
+                'areadocurso' => $areadocurso,
+                'formacaopedagogica' => $formacaopedagogica,
+                'posgraduacao' => $posgraduacao,
+                'tipopos' => $tipopos,
+                'outroscursos' =>$outroscursos,
+                //'thumb' => basename($_FILES['userfile']['name']) 
+            );
+
+            //cadastra o Professor
+            $this->crud_model->do_insert('professor', $dadosProfessor);
+                           
+            $dadosFuncionario=array(
+                'idFuncionario'=>$this->db->insert_id(),
+                'idEscola' => $escola['idEscola'],
+                'cpf' => $cpf,
+                'cargo' => 'professor',
+                'status' => 'ativo'
+            );
+            
+            //cadastra o funcionario
+            $this->crud_model->do_insert('funcionarios', $dadosFuncionario);
+            
+            if ($this->db->trans_status() === FALSE /*OR $this->funcoes->move_upload($usuario['codigo_user']) == FALSE*/)
+            {
+               $this->db->trans_rollback();
+                echo 'Erro ao realizar cadastro!';
+            }
+            else
+            {
+                $this->db->trans_commit();
+                $pagina = 'gerenciar/professores';
+                redirect(base_url($pagina));
+                //redireciona para a pagina escolhida
+            }
+        }
+    }//cadastrarProfessor
 
 
 

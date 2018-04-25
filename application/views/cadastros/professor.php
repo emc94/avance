@@ -4,7 +4,7 @@
 ?>
 
 <div class="container">
-<form id="form_cad" action="_funcoes/cadprofessor.php" method="post" class="form-horizontal form_cad">
+<form id="form_cad" action="<?=base_url('/cadastrar/cadastrarProfessor');?>" method="post" class="form-horizontal form_cad">
 	
 	<h3>Formulário de Cadastro / Professor</h3>
 	<fieldset class="legenda">
