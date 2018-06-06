@@ -1,6 +1,5 @@
 <?php
-   $this->load->view("includes/funcoes.php"); 
-     scripts();
+   $this->funcoes->scripts();
 ?>
 
 <div class="container">
@@ -23,7 +22,7 @@
 				<div class="controls">
 					<select name="escola" class="form-control selectwidth" id="escola" required>
 						<option value="0">Selecione a Escola</option>
-						<?php listarEscolaCadDiretor(); ?>
+						<?php $this->funcoes->listarEscolaCadDiretor();?>
 					</select>
 				</div>
 				</div><!-- GRUPO codigo escola -->

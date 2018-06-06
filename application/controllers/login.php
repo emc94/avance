@@ -15,8 +15,6 @@ class Login extends CI_Controller {
 	}
 	
     public function autenticar(){
- 
-
 		$login = $this->input->post("login");// pega via post o login
 		$senha = $this->input->post("senha"); // pega via post a senha
 		$nivel = $this->input->post('nivel');//pega via post o nivel de acesso
@@ -46,7 +44,7 @@ class Login extends CI_Controller {
         if($usuario!=NULL){
             $this->session->set_userdata("logged", $usuario);
 			$dados = array("mensagem" => "Logado com sucesso!");
-			$dados['titulo'] = 'SIGE | Home';
+			$dados['titulo'] = 'Avance | Home';
 			$dados['tela'] = 'home'; 
 			$dados['nome'] = $usuario['nome'];
 			//var_dump($dados);
@@ -62,15 +60,12 @@ class Login extends CI_Controller {
 		$this->session->set_userdata("error", "Informe o <b>Usuário</b> a <b>Senha</b> e o <br /> <b>Tipo de Acesso</b>!");
 		redirect('/login');
 	endif;
+	}//autenticar
 
-		
-	}
 	public function logout(){
-
 		$this->session->sess_destroy();
 		$this->session->sess_regenerate([$destroy = TRUE]);//destroi os dados da sessao anterior impedindo o retorno a pagina anterior
 		redirect('/');
-
 	}
 }
 

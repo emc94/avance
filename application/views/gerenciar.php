@@ -12,7 +12,7 @@
         if($_SESSION['logged']['sigeUserNivel'] == 'd'){//VERIFICA SE O NIVEL E O DE DIRETOR
 	?>
     <li>
-    	<a href="index.php?page=form_cad_aluno">
+        <a href="<?= base_url('/cadastrar/aluno');?>">
             <article>
             <figure>
                 <img src="../assets/img/icone.cadastrarProfessor.png" alt="">
@@ -185,7 +185,7 @@
 
 <ul>        	
     <li>
-    	<a href="index.php?page=form_cad_turma">
+    	<a href="<?= base_url('/cadastrar/turma');?>">
         <article>
         <figure>
             <img src="../assets/img/icone.cadastrarProfessor.png" alt="">
@@ -281,7 +281,7 @@
 
 <ul>        	
     <li>
-    	<a href="index.php?page=form_cad_horarioturma">
+    	<a href="<?= base_url('cadastrar/horario');?>">
         <article>
         <figure>
             <img src="../assets/img/icone.quadroHorario.png" alt="">

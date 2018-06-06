@@ -259,6 +259,15 @@
 	<?php
 	 enderecoContatos();
 	?>
+<!--
+		<fieldset class="legenda">
+		<legend>Foto do Professor</legend>
+
+		<?php //inclue o formulário de upload
+		//formularioUpload('professor', 'imagens', 'thumb');
+		?>
+		</fieldset>
+-->
 
 		 <input type="hidden" id="campos" name="campos" value="<?php camposValidar("professor");?>" />
 			<input class="btn btn-success" type="submit" onclick="validarFormulario('professor')" value="Cadastrar Professor" />

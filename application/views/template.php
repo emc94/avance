@@ -4,7 +4,7 @@
 	endif;
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,7 +14,8 @@
 	<link rel="stylesheet" href="<?php echo base_url();?>assets/css/estilo.css">
 	<link href="<?php echo base_url();?>assets/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<header>
+<body>
+	<header>
 		<div class="row">
 			<nav class="col-md-1 col-xs-3 logo_sige">
 				<a href="<?=base_url('home');?>">
@@ -22,10 +23,10 @@
 					</a>
 			</nav>
 
-<?php
-	$nomeUser=explode(' ',$_SESSION['logged']['nome']);
-?>
-<!--
+		<?php
+			$nomeUser=explode(' ',$_SESSION['logged']['nome']);
+		?>
+		<!--
 			<ul>
 				<li>
 					<?php echo anchor('crud/cadastrar','Cadastrar');?>
@@ -41,7 +42,7 @@
 				</li>				
 			</ul>
 	
-	-->
+		-->
 
 			<nav class="col-md-9 col-sm-4 col-xs-4 text-right user_header">
 				<ul>
@@ -243,7 +244,7 @@
 				</ul>
 			</nav>
 		</div>
-		</header>
+	</header>
     
     <?php echo $contents; ?>
 

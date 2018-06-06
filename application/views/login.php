@@ -3,25 +3,11 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>SIGE - Sistema de Gestão Educacional</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>Página de Acesso | Gestão Educacional - Avance</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=no">
 	<link rel="icon" href="<?php echo base_url();?>assets/img/favicon.ico" />
 	<link rel="stylesheet" href="<?= base_url("assets/css/login.css");?>">
 	<link href="<?= base_url("assets/css/bootstrap.min.css");?>" rel="stylesheet">
-
-<script type="text/javascript">
-
-	function issetError(){ 
-
-		 var erro = document.getElementById("error");
-		if(typeof erro !=='undefined'){
-			var error=document.querySelector('.erro');
-			error.style.display = 'none';
-			error.style.transition = "all .6s ease-in";
-		}
-	}
-</script>
-
 </head>
 <body>
 	<div class="container-fluid">
@@ -87,8 +73,6 @@
 							</label>
 							<a href="#" title="Recuperar Senha">Esqueceu a senha?</a>
 						</div>
-
-
 					</form>
 
 				</article>

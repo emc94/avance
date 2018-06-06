@@ -2,3 +2,14 @@ RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.php/$1 [PT,L]
+
+#Compress certain file types by extension:
+<Files *.html>
+	SetOutputFilter DEFLATE
+</Files>
+<Files *.css>
+	SetOutputFilter DEFLATE
+</Files>
+<Files *.js>
+	SetOutputFilter DEFLATE
+</Files>

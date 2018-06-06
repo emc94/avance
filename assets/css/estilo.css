@@ -5,33 +5,36 @@
     src:url("../fonts/insigne - Dulcian Cond Bold Italic.otf"); 
 }
 @font-face{
-font-family:'dulcianExtB';
-src:url("../fonts/insigne - Dulcian Cond Bold.otf");
+    font-family:'dulcianExtB';
+    src:url("../fonts/insigne - Dulcian Cond Bold.otf");
 }
 @font-face{
-font-family:'dulcianCondLightItalic';
-src:url("../fonts/insigne - Dulcian Cond Light Italic.otf");
+    font-family:'dulcianCondLightItalic';
+    src:url("../fonts/insigne - Dulcian Cond Light Italic.otf");
 }
 @font-face{
-font-family:'dulcianExtBItalic';
-src:url("../fonts/insigne - Dulcian Ext Bold Italic.otf");
+    font-family:'dulcianExtBItalic';
+    src:url("../fonts/insigne - Dulcian Ext Bold Italic.otf");
 }
 @font-face{
     font-family:'dulcianExtDemi';
     src:url("../fonts/insigne - Dulcian Ext Book.otf");
     }
 @font-face{
-font-family: 'dulcianRegular';
-src:url("../fonts/insigne - Dulcian Cond Regular.otf");
-}@font-face{
-font-family: 'CondDemiIt';
-src:url("../fonts/insigne - Dulcian Cond Demi Italic.otf");
-}@font-face{
-font-family: 'CondDemi';
-src:url("../fonts/insigne - Dulcian Cond Demi.otf");
-}@font-face{
-font-family: 'DJB';
-src:url("../fonts/DJB Chalk It Up.ttf");
+    font-family: 'dulcianRegular';
+    src:url("../fonts/insigne - Dulcian Cond Regular.otf");
+}
+@font-face{
+    font-family: 'CondDemiIt';
+    src:url("../fonts/insigne - Dulcian Cond Demi Italic.otf");
+}
+@font-face{
+    font-family: 'CondDemi';
+    src:url("../fonts/insigne - Dulcian Cond Demi.otf");
+}
+@font-face{
+    font-family: 'DJB';
+    src:url("../fonts/DJB Chalk It Up.ttf");
 }
 @font-face{
     font-family:"eraser";
@@ -48,32 +51,32 @@ src:url("../fonts/DJB Chalk It Up.ttf");
 @font-face{
     font-family:'dulcianMediumItalic';
     src:url("../fonts/insigne - Dulcian Cond Medium Italic.otf");
-
 }
 
 /***************************** GLOBAL ********************************************/
 
-a:focus, a:hover{text-decoration:none !important; color:white;}
+a:focus, a:hover{text-decoration:none !important; color:#ffffff;}
 
-body{background-image: url("../img/background.png");
-background-repeat:repeat;
-min-width: 430px;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-flex-wrap: nowrap;
+body{
+    background-image: url("../img/background.png");
+    background-repeat:repeat;
+    min-width: 430px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
 }
 /****************************** MENU *********************************************/
 header{
-    width:100%;
-    min-width:400px;
-    height:100px; 
-    padding:10px 10px;
-    background-color: #0054ff; 
-    box-shadow: 0px 8px 20px 0px rgba(0,0,0,.3);
-    margin-bottom:20px;
-    /*overflow:hidden;*/
+    width: 100%;
+    min-width: 400px;
+    height: 100px;
+    padding: 10px 10px;
+    background-color: #0045d3;
+    box-shadow: 0px 2px 3px 2px rgba(0,0,0,.3);
+    margin-bottom: 20px;
+    overflow: hidden;
 }
 header .row{
     display: flex;
@@ -85,7 +88,7 @@ header .row{
 header input[type="submit"]{
     background-image: url(../img/Btn_sair.png); 
     padding: 0;border: 0 !important;width: 91px; height: 38px;
-    margin: 0;-webkit-mask-box-image: url(../img/Btn_sair.png);color:white;
+    margin: 0;-webkit-mask-box-image: url(../img/Btn_sair.png);color:#ffffff;
     background-color: transparent;
 }
 header a{margin: 0;padding: 0;}
@@ -157,7 +160,7 @@ header .menu-mobile .actionMenu{
 .actionMenu span{
     font-family: 'Roboto', sans-serif;
     font-size: 1em;
-    color: #fff;
+    color: #ffffff;
 }
 .actionMenu img{
     float: right;
@@ -174,7 +177,6 @@ header .menu-mobile .actionMenu{
     height: 104%;
     margin-bottom: 0;
 }
-
 .menu-items ul{
     list-style: none;
     background: #ababab;
@@ -199,12 +201,10 @@ header .menu-mobile .actionMenu{
     display: flex;
     font:17pt dulcian;
     color:#ffffff;
-
 }
 .menu-items ul li:hover{
     background-color: #0035a1;
 }
-
 .buttom-sair
 {display: flex;
     align-items: center;
@@ -214,10 +214,9 @@ header .menu-mobile .actionMenu{
 .logo_sige a{
     margin: 0;
     padding: 0;
-    color: #fff;
+    color: #ffffff;
     font-family: dulcianCondLightItalic;
     font-size: 16px;
-
 }
 .rigth_bar_header{float:right;}
 .user_header{  
@@ -228,9 +227,9 @@ header .menu-mobile .actionMenu{
     justify-content: flex-start;
     align-items: baseline;
 }
-.user_header h6{font:24px dulcianConBI;color:white;font-weight: 200; /*width: inherit*/;
+.user_header h6{font:24px dulcianConBI;color:#ffffff;font-weight: 200; /*width: inherit*/;
     display: inline;letter-spacing: 1px;}
-.user_header h6 span{font:23px dulcianRegular;color:white;font-style: italic;letter-spacing: 1.5px;}
+.user_header h6 span{font:23px dulcianRegular;color:#ffffff;font-style: italic;letter-spacing: 1.5px;}
 /*.user_header form{}*/
 .user_header input[type="submit"]{font:22px dulcianExtB;}
 /****************************** CONTEUDO ********************************************/
@@ -249,13 +248,11 @@ header .menu-mobile .actionMenu{
     overflow: hidden;
 }*/
 
-.banner h3{font:60px DJB;color:white;margin-top: 0;margin-bottom: -10px;text-align: center;}
-.banner h1{font: 75px eraser;color:white;text-align: center;margin-top: 0;}
+.banner h3{font:60px DJB;color:#ffffff;margin-top: 0;margin-bottom: -10px;text-align: center;}
+.banner h1{font: 75px eraser;color:#ffffff;text-align: center;margin-top: 0;}
 /*.row::before{content: initial !important;}*/
 /*.row::after{content: initial !important;}*/
-
 .banner .col-md-4{padding-right: 0 !important; padding-left: 0 !important;} 
-
 .banner-img{
     padding-right: 0 !important; 
     padding-left: 0 !important;    
@@ -273,7 +270,7 @@ header .menu-mobile .actionMenu{
 }
 .banner-img figcaption{    
     font-family: dulcianExtBItalic;
-    color: white;
+    color: #ffffff;
     font-size: 2.4em;
     align-self: center;
     display: flex;
@@ -332,7 +329,7 @@ header .menu-mobile .actionMenu{
 }
 .interface ul li a{
     text-align: center;
-    color: white;
+    color: #ffffff;
     width: 100%;
     height: 100%;
     margin-top: -10px;
@@ -343,12 +340,11 @@ header .menu-mobile .actionMenu{
     justify-content: center;
     
 }
-.interface ul li a:hover{text-decoration:none;color:white !important;}
-.interface ul li a:active{text-decoration:none;color:white !important;}
+.interface ul li a:hover{text-decoration:none;color:#ffffff !important;}
+.interface ul li a:active{text-decoration:none;color:#ffffff !important;}
 .interface ul li a h6{font:34px dulcianCondLightItalic;margin:0;padding: 0;}
 .interface ul li a h3{font:30px dulcianExtBItalic;margin:0;padding: 0;}
 .interface nav a img{ margin-right: 3px; margin-bottom: 15px;}
-
 .interface2{
     display: flex;
     flex-wrap: wrap;
@@ -356,11 +352,10 @@ header .menu-mobile .actionMenu{
     justify-content: center;
 }
 .interface2 nav a img{
-
     margin-right: 3px;
     margin-bottom: 15px;
 }
-.interface2 a:hover{text-decoration:none;color: white;}
+.interface2 a:hover{text-decoration:none;color: #ffffff;}
 .interface2 a.btn_boletim {
     font:17pt CondDemi;
     line-height: 186%;
@@ -368,7 +363,7 @@ header .menu-mobile .actionMenu{
     background-image: url(../img/btn_interface2h.png);
     width: 175px;
     height: 47px;
-    color: white;
+    color: #ffffff;
     float: left;
     margin-left: 9px;
     background-size: 175px 47px;
@@ -381,20 +376,19 @@ header .menu-mobile .actionMenu{
     background-image: url(../img/btn_interface2h.png);
     width: 106px;
     height: 47px;
-    color: white;
+    color: #ffffff;
     float: left;
     margin-left: 9px;
     background-size: 106px 47px;
     background-repeat: no-repeat;
 }
-a.btn_boletim:hover{background-image: url(../img/btn_interface2.2.png);font-weight: bold; color: white !important;}
-a.btn_boletim2:hover{background-image: url(../img/btn_interface2.2.png);font-weight: bold; color: white !important;}
+a.btn_boletim:hover{background-image: url(../img/btn_interface2.2.png);font-weight: bold; color: #ffffff !important;}
+a.btn_boletim2:hover{background-image: url(../img/btn_interface2.2.png);font-weight: bold; color: #ffffff !important;}
 
 .interface2 table{width: 100%;}
 .interface2 table, th, td {
     border: 1px solid #dedada;
-    background-color: white;
-
+    background-color: #ffffff;
 }
 .interface2  th, td{
     padding: 5px 10px;
@@ -406,10 +400,9 @@ a.btn_boletim2:hover{background-image: url(../img/btn_interface2.2.png);font-wei
 .home{float: left;}
 .notas_faltas{background: #0054ff;clear:both;margin-bottom:15px;padding: 0!important;}
 .notas_faltas th, td{border: 1px solid #f1f1f1; padding: 10px !important;}
-.notas_faltas caption{background: #0035a1;color:white;font:16pt CondDemiIt;text-align: center;width: 100%;}
+.notas_faltas caption{background: #0035a1;color:#ffffff;font:16pt CondDemiIt;text-align: center;width: 100%;}
 td.disciplina{text-align: left;text-indent: 5px; }
 .print-btn{float:right; margin-right: 83px!important;}
-
 .nota{border: 1px solid #f1f1f1;}
 
 
@@ -429,15 +422,13 @@ td.disciplina{text-align: left;text-indent: 5px; }
     font-weight: 600;
 }
 /****************************** CADASTRO DE NOTAS ***********************************/
-
 .cad_notas_faltas{clear:both;margin-bottom:15px;padding: 0!important;}
 .cad_notas_faltas table{margin:0 auto;}
-.cad_notas_faltas caption{background: #0035a1;color:white;font:16pt CondDemiIt;text-align: center;width: 100%;}
+.cad_notas_faltas caption{background: #0035a1;color:#ffffff;font:16pt CondDemiIt;text-align: center;width: 100%;}
 .cad_notas_faltas th{text-align: center; padding-left:5px;padding-right: 5px;}
 td.disciplina{text-align: center;text-indent: 5px;padding-left:5px;padding-right: 5px; }
 .print-btn{float:right; margin-right: 83px!important;}
 textarea.textareaaluno{height: 35px !important;}
-
 /****************************** CADASTRO DE FALTAS ***********************************/
 #faltas_Turma table, td, th, tr{border:0;}
 #faltas_Turma caption{text-align: center; color:#2db56a; font-weight: bold;  font-size: 16px;}
@@ -455,16 +446,13 @@ th.thFre{text-align:center;color: #717070;  width: 110px;border-bottom:1px solid
 th.thAluno{border-bottom:1px solid rgb(249, 239, 239);color: #717070;text-indent: 10px;}
 td.tdAluno{text-align: left;color: #717070;text-indent: 15px;}
 #frequencia_turma td{padding: 6px 0;border-bottom:1px solid rgb(249, 239, 239);}
-
-
 .tdCenter a{color: #717070;text-indent: 10px;}
-
 
 /****************************** QUADRO DE HORARIO DE AULA ********************************************/
 
 .quadroHorarioTurma{clear:both;margin-bottom:15px;padding: 0!important;}
 .quadroHorarioTurma table{margin:0 auto;}
-.quadroHorarioTurma caption{/**background: #0054ff;**/background: #ababab;color:white;font:16pt CondDemiIt;text-align: center;width: 100%;}
+.quadroHorarioTurma caption{/**background: #0054ff;**/background: #ababab;color:#ffffff;font:16pt CondDemiIt;text-align: center;width: 100%;}
 .quadroHorarioTurma th{text-align: center; padding-left:10px;padding-right: 10px;}
 .quadroHorario {border:1px solid #f1f1f1;}
 .quadroHorario th {padding:10px;border:1px solid #f1f1f1;}
@@ -485,26 +473,20 @@ td  span.glyphicon-trash{font-size:10pt !important;    margin-right: 5px;}
 td span.glyphicon-education{font-size:11pt !important;    margin-right: 3px; color: #333;}
 td span.glyphicon-book{font-size: 9pt !important; margin-right: 3px; color: #8c9494;}
 /****************************** SIDEBAR ********************************************/
-
 .sidebar{width:125px;float:right;background-color:#ababab;padding:5px;margin-top: -20px;box-shadow:-1px 3px 11px rgba(20,16,14,.5)}
-.sidebar h6{font:15.56px dulcianRegular;color:white;text-align:center;}
+.sidebar h6{font:15.56px dulcianRegular;color:#ffffff;text-align:center;}
 .sidebar article{width:110px;}
 .sidebar article figure{position:relative;height:150px;}
 .sidebar article img{position: absolute; margin: 0 auto; top: auto;  bottom: auto;   left: 0;  right: 0;}
 .sidebar article figcaption{position: absolute; margin: 0 auto; top: 97px; bottom: auto;  left: 0;  right: 0;}
-
-
 /****************************** SIDEBAR ********************************************/
-
 .sidebar{width:125px;float:right;background-color:#ababab;padding:5px;margin-top: -20px;box-shadow:-1px 3px 11px rgba(20,16,14,.5)}
-.sidebar h6{font:15.56px dulcianRegular;color:white;text-align:center;}
+.sidebar h6{font:15.56px dulcianRegular;color:#ffffff;text-align:center;}
 .sidebar article{width:110px;}
 .sidebar article figure{position:relative;height:150px;}
 .sidebar article img{position: absolute; margin: 0 auto; top: auto;  bottom: auto;   left: 0;  right: 0;}
 .sidebar article figcaption{position: absolute; margin: 0 auto; top: 97px; bottom: auto;  left: 0;  right: 0;}
-
 /****************************** CONTEUDO ALUNO ********************************************/
-
 .banner-pages{
     width: 100%;
     height:126px;
@@ -525,7 +507,7 @@ td span.glyphicon-book{font-size: 9pt !important; margin-right: 3px; color: #8c9
 }
 .banner-pages figcaption{    
     font-family: dulcianExtBItalic;
-    color: white;
+    color: #ffffff;
     font-size: 2em;
     align-self: center;
     display: flex;
@@ -536,10 +518,9 @@ td span.glyphicon-book{font-size: 9pt !important; margin-right: 3px; color: #8c9
     text-transform: uppercase;
 }
 .banner-pages-img{width:100%;margin:0; padding:0;}
-
 /**************************************** PAGES Formularios *******************************************/
 form.form_cad{
-    background: white;
+    background: #ffffff;
     /*border: 1px solid #ddd;*/
     padding: 10px 20px;
     /*box-shadow: 0px 0px 2px 1px #dedede;*/
@@ -557,6 +538,13 @@ form.form_cad h3{
 .b-right{
     border-right: 1px solid #e5e5e5;
 }
+.grupo{
+    text-align:left!important;
+}
+.radio-inline{
+    vertical-align: baseline !important;
+}
+.control-label{text-align: left!important;}
 form.form_cad label{
     margin: 10px 0;
     font-family: 'dulcianExtDemi';
@@ -683,7 +671,7 @@ fieldset.legenda{
 .modulos ul li a h6{
     font-size: 18pt;
     font-family: dulcianMediumItalic;
-    color: white;
+    color: #ffffff;
     width: 150px;
     margin-left: 11px;
     word-break: break-word;
@@ -695,7 +683,7 @@ fieldset.legenda{
  }
 /****************************************  LISTAR  *******************************************/
 .listar{
-    background-color: white;
+    background-color: #ffffff;
     padding: 13px 10px 13px 10px;
     border-bottom: 2px solid #eee;
     /*box-shadow: 0px 0px 1px 1px rgba(80, 78, 78, 0.42);*/
@@ -810,7 +798,7 @@ nav.box-paginacao ul li a{
     align-items: center;
 } 
 nav.box-paginacao ul li a:focus, a:hover{
-    color:white !important;
+    color:#ffffff !important;
     transition: 1s ease-in;
 } 
 /***************************************** ERROS *********************************************/
@@ -820,7 +808,7 @@ nav.box-paginacao ul li a:focus, a:hover{
 }
 
 .buscar{
-    background-color: white;
+    background-color: #ffffff;
     padding: 5px 10px 13px 10px;
     box-shadow: 0px 0px 1px 1px rgba(80, 78, 78, 0.42);
     box-sizing: border-box;

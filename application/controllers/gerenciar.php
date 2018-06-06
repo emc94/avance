@@ -38,4 +38,10 @@ class Gerenciar extends CI_Controller{
         $this->template->load('template', 'gerenciar',$dados);
     }
 
+    public function horarios(){
+        $this->auth->CheckAuth($this->router->fetch_class(), $this->router->fetch_method());
+        $dados = array('modulo'=>'horarios');
+        $this->template->load('template', 'gerenciar',$dados);
+    }
+
 }
